@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://craf11ri8saw5"]
+
+[ext_resource type="Script" path="res://global/global_event_system/scripts/global_event_system.gd" id="1_3ca5s"]
+
+[node name="GlobalEventSystem" type="Node2D"]
+script = ExtResource("1_3ca5s")

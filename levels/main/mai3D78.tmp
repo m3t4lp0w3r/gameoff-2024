@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3guiso7yhc3v"]
+
+[ext_resource type="Script" path="res://levels/main/scripts/main.gd" id="1_gsui7"]
+[ext_resource type="PackedScene" uid="uid://cflmd8uub1ty6" path="res://interactable_button/interactable_button.tscn" id="3_iy7ab"]
+[ext_resource type="Script" path="res://levels/main/scripts/test_button.gd" id="3_ru2fd"]
+[ext_resource type="Script" path="res://levels/main/scripts/test_person.gd" id="5_0wubu"]
+[ext_resource type="PackedScene" uid="uid://deds8ucr1v780" path="res://tools/tool_state_machine/tool_state_manager.tscn" id="6_ic78c"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_gsui7")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 534.0
+offset_top = 48.0
+offset_right = 574.0
+offset_bottom = 71.0
+text = "Tool:"
+
+[node name="TestButton" type="Node2D" parent="."]
+position = Vector2(427, 244)
+script = ExtResource("3_ru2fd")
+
+[node name="InteractableButton" parent="TestButton" instance=ExtResource("3_iy7ab")]
+offset_right = 40.0
+offset_bottom = 40.0
+interaction_tool = 1
+
+[node name="ColorRect" type="ColorRect" parent="TestButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="TestPerson" type="Node2D" parent="."]
+position = Vector2(670, 204)
+script = ExtResource("5_0wubu")
+
+[node name="InteractableButton" parent="TestPerson" instance=ExtResource("3_iy7ab")]
+interaction_tool = 3
+
+[node name="ColorRect" type="ColorRect" parent="TestPerson"]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+color = Color(1, 0.25098, 1, 1)
+
+[node name="ToolStateManager" parent="." instance=ExtResource("6_ic78c")]
+
+[connection signal="interacted" from="TestButton/InteractableButton" to="TestButton" method="_on_interactable_button_interacted"]
+[connection signal="interacted" from="TestPerson/InteractableButton" to="TestPerson" method="_on_interactable_button_interacted"]
