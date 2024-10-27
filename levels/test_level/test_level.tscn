@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvb5u527n6dxq"]
+
+[ext_resource type="Script" path="res://levels/test_level/sprite_2d.gd" id="2_qhvb1"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(598, 331)
+script = ExtResource("2_qhvb1")

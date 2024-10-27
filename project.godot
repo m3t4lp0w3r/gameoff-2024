@@ -11,5 +11,12 @@ config_version=5
 [application]
 
 config/name="Gameoff2024"
+run/main_scene="res://levels/main/main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+EventSystem="*res://global/global_event_system/global_event_system.tscn"
+LevelSystem="*res://global/global_level_system/level_system.tscn"
+AudioSystem="*res://global/global_audio_system/audio_system.tscn"
