@@ -9,12 +9,6 @@ var levels : Dictionary
 func _ready() -> void:
 	for data in levels_resources:
 		levels[data.name] = data.scene
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func load_level(key: String) -> void:
 	if levels.has(key) :
