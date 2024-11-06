@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 EventSystem="*res://global/global_event_system/global_event_system.tscn"
 LevelSystem="*res://global/global_level_system/level_system.tscn"
 AudioSystem="*res://global/global_audio_system/audio_system.tscn"
+InventorySystem="*res://inventory/inventory.tscn"
 
 [input]
 

@@ -1,0 +1,133 @@
+[gd_scene load_steps=7 format=3 uid="uid://1dtl451uouxy"]
+
+[ext_resource type="Texture2D" uid="uid://ckjcq1uog4sk5" path="res://icon.svg" id="1_ki2qy"]
+[ext_resource type="Script" path="res://inventory/test_item/scripts/item.gd" id="1_s60ta"]
+[ext_resource type="Script" path="res://levels/test_samanta/drop.gd" id="3_yhbhj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdgnr"]
+size = Vector2(130, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cx3w1"]
+size = Vector2(130, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1skip"]
+size = Vector2(148, 174)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Item" type="Node2D" parent="."]
+position = Vector2(553, 348)
+script = ExtResource("1_s60ta")
+
+[node name="Sprite2D" type="Sprite2D" parent="Item"]
+modulate = Color(1, 0.776471, 0.278431, 1)
+texture = ExtResource("1_ki2qy")
+
+[node name="Area2D" type="Area2D" parent="Item/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item/Sprite2D/Area2D"]
+position = Vector2(-1, -2)
+shape = SubResource("RectangleShape2D_jdgnr")
+
+[node name="Label" type="Label" parent="Item"]
+visible = false
+anchors_preset = -1
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = -98.0
+offset_right = 59.0
+offset_bottom = -71.0
+grow_horizontal = 2
+text = "Press E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Item2" type="Node2D" parent="."]
+position = Vector2(885, 311)
+script = ExtResource("1_s60ta")
+id = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Item2"]
+modulate = Color(0.301961, 0.254902, 1, 1)
+texture = ExtResource("1_ki2qy")
+
+[node name="item_area" type="Area2D" parent="Item2/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item2/Sprite2D/item_area"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_cx3w1")
+debug_color = Color(0.794608, 0.841083, 3.85046e-07, 0.627451)
+
+[node name="Label" type="Label" parent="Item2"]
+visible = false
+offset_left = -38.0
+offset_top = -99.0
+offset_right = 46.0
+offset_bottom = -67.0
+text = "Press E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Drop" type="Node2D" parent="."]
+position = Vector2(193, 325)
+script = ExtResource("3_yhbhj")
+id = 1
+
+[node name="Label" type="Label" parent="Drop"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -4.0
+offset_top = -103.0
+offset_right = 130.0
+offset_bottom = -16.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "DROP AREA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Drop"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -17.0
+offset_top = 34.0
+offset_right = 150.0
+offset_bottom = 121.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "PRESS E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Drop"]
+visible = false
+modulate = Color(0.301961, 0.254902, 1, 1)
+position = Vector2(66, 79)
+scale = Vector2(1.03906, 1.02344)
+texture = ExtResource("1_ki2qy")
+
+[node name="Area2D" type="Area2D" parent="Drop"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop/Area2D"]
+position = Vector2(64, 77)
+shape = SubResource("RectangleShape2D_1skip")
+
+[node name="Label2" type="Label" parent="Drop"]
+visible = false
+offset_left = -4.0
+offset_top = 181.0
+offset_right = 124.0
+offset_bottom = 238.0
+text = "Item not found"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="Item/Sprite2D/Area2D" to="Item" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Item/Sprite2D/Area2D" to="Item" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Item2/Sprite2D/item_area" to="Item2" method="_on_item_area_mouse_entered"]
+[connection signal="mouse_exited" from="Item2/Sprite2D/item_area" to="Item2" method="_on_item_area_mouse_exited"]
+[connection signal="mouse_entered" from="Drop/Area2D" to="Drop" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Drop/Area2D" to="Drop" method="_on_area_2d_mouse_exited"]
