@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://0itiv1724qfq"]
+[gd_scene load_steps=9 format=3 uid="uid://0itiv1724qfq"]
 
 [ext_resource type="PackedScene" uid="uid://b1124l3cpps2k" path="res://player/player.tscn" id="1_7tcuf"]
 [ext_resource type="Texture2D" uid="uid://ckjcq1uog4sk5" path="res://icon.svg" id="2_mnmm2"]
@@ -11,6 +11,9 @@ size = Vector2(1066, 599)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w5k3p"]
 size = Vector2(79, 1655.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8t8y"]
+size = Vector2(593, 54)
 
 [node name="TestSimone" type="Node2D"]
 
@@ -34,7 +37,7 @@ position = Vector2(427, 318)
 [node name="follow_player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("player_ref")]
 position = Vector2(427, 318)
 collision_layer = 16
-collision_mask = 2
+collision_mask = 32
 script = ExtResource("4_55nm7")
 player_ref = NodePath("../Player")
 
@@ -53,8 +56,8 @@ remote_path = NodePath("../../Camera2D")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-364, 341)
-collision_layer = 2
-collision_mask = 16
+collision_layer = 34
+collision_mask = 17
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_w5k3p")
@@ -63,10 +66,18 @@ debug_color = Color(0.787039, 0.275809, 0.826464, 0.42)
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(-40, 755)
 rotation = 1.57079
-collision_layer = 2
-collision_mask = 16
+collision_layer = 34
+collision_mask = 17
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(-0.00012207, -462.25)
 shape = SubResource("RectangleShape2D_w5k3p")
 debug_color = Color(0.787039, 0.275809, 0.826464, 0.42)
+
+[node name="PlayerWall" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerWall"]
+position = Vector2(-31, -93)
+shape = SubResource("RectangleShape2D_o8t8y")
+debug_color = Color(0.570881, 0.54139, 0.357895, 0.42)
