@@ -18,3 +18,9 @@ texture = ExtResource("1_jxb4s")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_bppr6")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+modulate = Color(0.996946, 3.44135e-06, 0, 1)
+target_position = Vector2(0, 100)
+collision_mask = 4
+collide_with_areas = true

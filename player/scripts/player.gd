@@ -1,9 +1,22 @@
 extends CharacterBody2D
 
-
 @export var SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+@export var interact_distance = 100
 
+@onready var ray_cast = $RayCast2D
+
+var raycast_target : Vector2
+
+func _process(delta: float) -> void:
+	
+	ray_cast.target_position = raycast_target
+	
+	if Input.is_action_just_pressed("interact") :
+		if ray_cast.is_colliding():
+			var area_collider = ray_cast.get_collider()
+			var parent = area_collider.get_parent()
+			if parent != null and parent is Interactable:
+				parent.interact()
 
 func _physics_process(delta: float) -> void:
 
@@ -17,7 +30,10 @@ func _physics_process(delta: float) -> void:
 	var y_direction := Input.get_axis("up", "down")
 	#if x_direction != 0 or y_direction != 0:
 	velocity = Vector2(x_direction, y_direction) * SPEED
-		
+	
+	if x_direction != 0 or y_direction != 0 :
+		raycast_target = Vector2(x_direction, y_direction) * interact_distance
+	
 	velocity.move_toward(Vector2.ZERO, SPEED)
 
 	move_and_slide()
