@@ -1,4 +1,5 @@
 extends Node2D
+
 @export var id : int
 var pick_up = false
 

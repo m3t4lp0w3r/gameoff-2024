@@ -1,6 +1,8 @@
 extends Node2D
 
 var items_array = []
+@onready var inventory_grid = %GridContainer
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -16,5 +18,16 @@ func pick_up(id: int):
 	print("inventory_pick_up", items_array)
 
 func drop_item(id: int):
-	items_array.remove_at(id)
-	print("inventory_drop", items_array)
+	var item_index = items_array.find(id)
+	items_array.remove_at(item_index)
+	var child_count = inventory_grid.get_child_count()
+	for i in range(child_count -1, -1, -1):
+		var child = inventory_grid.get_child(i)
+		if i == item_index:
+			inventory_grid.remove_child(child)
+	print("inventory_drop", id)
+
+func check_item(id: int):
+	for item in items_array:
+		if item == id:
+			return item
