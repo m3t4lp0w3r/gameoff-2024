@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cebw0e58m5xj5"]
+
+[ext_resource type="Script" path="res://camera/scripts/follow_player.gd" id="1_xgjyg"]
+[ext_resource type="Texture2D" uid="uid://ckjcq1uog4sk5" path="res://icon.svg" id="2_pjpr5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kl2am"]
+size = Vector2(1066, 599)
+
+[node name="CameraFollow" type="Node2D"]
+script = ExtResource("1_xgjyg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 16
+collision_mask = 32
+motion_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+visible = false
+texture = ExtResource("2_pjpr5")
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_kl2am")
+debug_color = Color(0.356815, 0.610404, 0.291993, 0.141176)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
+remote_path = NodePath("../../Camera2D")
+update_rotation = false
+update_scale = false
