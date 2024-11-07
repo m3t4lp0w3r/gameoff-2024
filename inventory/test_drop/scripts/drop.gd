@@ -11,8 +11,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if drop_item and Input.is_action_just_pressed("interact"):
-		if InventorySystem.check_item(item_data.id):
-			InventorySystem.drop_item(item_data.id)
+		if InventorySystem.check_item(item_data):
+			InventorySystem.drop_item(item_data)
 			$StarDiceSprite.show()
 			$StaticBody2D/Area2D.hide()
 		else:

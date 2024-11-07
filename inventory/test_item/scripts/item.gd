@@ -7,9 +7,8 @@ var pick_up = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and pick_up:
-			InventorySystem.pick_up(item_data.id)
+			InventorySystem.pick_up(item_data)
 			pick_up = false
-			print(item_data.id)
 			hide()
 
 
