@@ -13,11 +13,12 @@ func _process(delta: float) -> void:
 			hide()
 
 
-func _on_interaction_area_2d_mouse_entered() -> void:
+func _on_area_mouse_entered() -> void:
 	pick_up = true
-	$Label.show()
-
-func _on_interaction_area_2d_mouse_exited() -> void:
-	pick_up = false
-	$Label.hide()
+	$"../Item2/Label".show()
 	
+
+
+func _on_area_mouse_exited() -> void:
+	pick_up = false
+	$"../Item2/Label".hide()
