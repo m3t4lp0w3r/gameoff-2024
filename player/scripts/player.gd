@@ -14,9 +14,8 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") :
 		if ray_cast.is_colliding():
 			var area_collider = ray_cast.get_collider()
-			var parent = area_collider.get_parent()
-			if parent != null and parent is Interactable:
-				parent.interact()
+			if area_collider != null and area_collider is Interactable:
+				area_collider.interact()
 
 func _physics_process(delta: float) -> void:
 

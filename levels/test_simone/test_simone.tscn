@@ -89,11 +89,7 @@ shape = SubResource("RectangleShape2D_2hdp7")
 
 [node name="Interactable" parent="ItemTest" instance=ExtResource("6_jimtd")]
 
-[node name="Area2D" type="Area2D" parent="ItemTest/Interactable"]
-collision_layer = 4
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemTest/Interactable/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemTest/Interactable"]
 position = Vector2(4, 1.5)
 shape = SubResource("RectangleShape2D_pdcj2")
 debug_color = Color(0.396506, 0.469582, 1, 0.42)
