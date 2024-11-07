@@ -1,13 +1,110 @@
-[gd_scene load_steps=3 format=3 uid="uid://0itiv1724qfq"]
+[gd_scene load_steps=11 format=3 uid="uid://0itiv1724qfq"]
 
-[ext_resource type="Script" path="res://levels/test_simone/scripts/AudioTest.gd" id="1_qb5uq"]
-[ext_resource type="Texture2D" uid="uid://ckjcq1uog4sk5" path="res://icon.svg" id="2_mnmm2"]
+[ext_resource type="PackedScene" uid="uid://b1124l3cpps2k" path="res://player/player.tscn" id="1_7tcuf"]
+[ext_resource type="PackedScene" uid="uid://cebw0e58m5xj5" path="res://camera/camera.tscn" id="3_0y0rg"]
+[ext_resource type="Texture2D" uid="uid://cxx06vetlfmqp" path="res://splash_screen/STAR dice white.png" id="3_6efru"]
+[ext_resource type="Texture2D" uid="uid://x01qfcfa3ev7" path="res://credits/Credits/Simone.png" id="4_f3lrh"]
+[ext_resource type="Script" path="res://levels/test_simone/scripts/item_test.gd" id="5_0ehfe"]
+[ext_resource type="PackedScene" uid="uid://bp55k82sv4ufj" path="res://interactable/interactable.tscn" id="6_jimtd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5k3p"]
+size = Vector2(79, 1655.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8t8y"]
+size = Vector2(593, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hdp7"]
+size = Vector2(180, 164)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdcj2"]
+size = Vector2(180, 163)
 
 [node name="TestSimone" type="Node2D"]
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(457, 233)
-script = ExtResource("1_qb5uq")
+[node name="follow_player" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("3_0y0rg")]
+player_ref = NodePath("../Player")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
-texture = ExtResource("2_mnmm2")
+[node name="Player" parent="." instance=ExtResource("1_7tcuf")]
+unique_name_in_owner = true
+position = Vector2(783, 325)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-364, 341)
+collision_layer = 34
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-79, -359)
+shape = SubResource("RectangleShape2D_w5k3p")
+debug_color = Color(0.787039, 0.275809, 0.826464, 0.42)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(1369, 326)
+collision_layer = 34
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-79, -359)
+shape = SubResource("RectangleShape2D_w5k3p")
+debug_color = Color(0.787039, 0.275809, 0.826464, 0.42)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-40, 755)
+rotation = 1.57079
+collision_layer = 34
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-0.00012207, -462.25)
+shape = SubResource("RectangleShape2D_w5k3p")
+debug_color = Color(0.787039, 0.275809, 0.826464, 0.42)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(-40, -806)
+rotation = 1.57079
+collision_layer = 34
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(-0.00012207, -462.25)
+shape = SubResource("RectangleShape2D_w5k3p")
+debug_color = Color(0.787039, 0.275809, 0.826464, 0.42)
+
+[node name="PlayerWall" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerWall"]
+position = Vector2(-31, -93)
+shape = SubResource("RectangleShape2D_o8t8y")
+debug_color = Color(0.570881, 0.54139, 0.357895, 0.42)
+
+[node name="ItemTest" type="StaticBody2D" parent="."]
+position = Vector2(930, -93)
+collision_layer = 2
+script = ExtResource("5_0ehfe")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ItemTest"]
+texture = ExtResource("4_f3lrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemTest"]
+position = Vector2(4, 2)
+shape = SubResource("RectangleShape2D_2hdp7")
+
+[node name="Interactable" parent="ItemTest" instance=ExtResource("6_jimtd")]
+
+[node name="Area2D" type="Area2D" parent="ItemTest/Interactable"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemTest/Interactable/Area2D"]
+position = Vector2(4, 1.5)
+shape = SubResource("RectangleShape2D_pdcj2")
+debug_color = Color(0.396506, 0.469582, 1, 0.42)
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(80, 421)
+texture = ExtResource("3_6efru")
+
+[connection signal="interacted" from="ItemTest/Interactable" to="ItemTest" method="_on_interactable_interacted"]
