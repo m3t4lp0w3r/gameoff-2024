@@ -1,6 +1,6 @@
 extends Node2D
 
-var items_array = [ItemData]
+var items_array : Array[ItemData] = []
 @onready var inventory_slot = $CanvasLayer/Control/Panel/HBoxContainer
 
 func pick_up(data: ItemData):
@@ -10,6 +10,7 @@ func pick_up(data: ItemData):
 	#size is a placeholder
 	slot.expand_mode = TextureRect.EXPAND_FIT_WIDTH
 	inventory_slot.add_child(slot)
+	print(items_array)
 	
 
 func drop_item(data: ItemData):
