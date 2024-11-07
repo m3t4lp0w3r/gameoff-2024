@@ -10,6 +10,7 @@ size = Vector2(1066, 599)
 script = ExtResource("1_xgjyg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.4, 0.4)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 collision_layer = 16

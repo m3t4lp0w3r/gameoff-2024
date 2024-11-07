@@ -12,6 +12,7 @@ motion_mode = 1
 script = ExtResource("1_ooyay")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(0, 1)
 texture = ExtResource("1_jxb4s")
 

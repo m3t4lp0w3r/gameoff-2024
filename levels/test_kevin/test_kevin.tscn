@@ -1,0 +1,215 @@
+[gd_scene load_steps=18 format=3 uid="uid://nuw8ktlhjtn6"]
+
+[ext_resource type="PackedScene" uid="uid://cebw0e58m5xj5" path="res://camera/camera.tscn" id="1_28s03"]
+[ext_resource type="PackedScene" uid="uid://b1124l3cpps2k" path="res://player/player.tscn" id="2_od3br"]
+[ext_resource type="Script" path="res://levels/test_simone/scripts/item_test.gd" id="3_u8jll"]
+[ext_resource type="Texture2D" uid="uid://x01qfcfa3ev7" path="res://credits/Credits/Simone.png" id="4_yoyfi"]
+[ext_resource type="PackedScene" uid="uid://bp55k82sv4ufj" path="res://interactable/interactable.tscn" id="5_57ihi"]
+[ext_resource type="Texture2D" uid="uid://xyyuaxkgugvi" path="res://resources/placeholders/donald-trump-png-4.png" id="6_k6fwy"]
+[ext_resource type="Texture2D" uid="uid://pu1n1fjl3vd7" path="res://resources/placeholders/Annaffiatoio.png" id="7_arjki"]
+[ext_resource type="Texture2D" uid="uid://dl02qfrtomh8j" path="res://resources/placeholders/Omino_rosso.png" id="8_muqft"]
+[ext_resource type="Texture2D" uid="uid://chsydoeycisos" path="res://resources/placeholders/Fumetto.png" id="9_d4su1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5k3p"]
+size = Vector2(79, 2047.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivy7m"]
+size = Vector2(104, 3470.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kwy6"]
+size = Vector2(563.99, 3476.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8t8y"]
+size = Vector2(593, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hdp7"]
+size = Vector2(180, 164)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdcj2"]
+size = Vector2(180, 163)
+
+[sub_resource type="LabelSettings" id="LabelSettings_og27l"]
+line_spacing = 8.04
+font_size = 201
+
+[sub_resource type="LabelSettings" id="LabelSettings_0s367"]
+line_spacing = 8.04
+font_size = 96
+
+[node name="TestSimone" type="Node2D"]
+
+[node name="follow_player" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("1_28s03")]
+player_ref = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource("2_od3br")]
+unique_name_in_owner = true
+position = Vector2(1150, -16)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-364, 341)
+collision_layer = 34
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-73, -186)
+shape = SubResource("RectangleShape2D_w5k3p")
+debug_color = Color(0.787039, 0.275809, 0.826464, 0.42)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(1369, 326)
+collision_layer = 34
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(1593, -168.875)
+shape = SubResource("RectangleShape2D_w5k3p")
+debug_color = Color(0.787039, 0.275809, 0.826464, 0.42)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-40, 755)
+rotation = 1.57079
+collision_layer = 34
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(378.008, -1303.63)
+shape = SubResource("RectangleShape2D_ivy7m")
+debug_color = Color(0.787039, 0.275809, 0.826464, 0.42)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(-40, -806)
+rotation = 1.57079
+collision_layer = 34
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(220.014, -1300.63)
+shape = SubResource("RectangleShape2D_4kwy6")
+debug_color = Color(0.787039, 0.275809, 0.826464, 0.42)
+
+[node name="PlayerWall" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerWall"]
+position = Vector2(-31, -93)
+shape = SubResource("RectangleShape2D_o8t8y")
+debug_color = Color(0.570881, 0.54139, 0.357895, 0.42)
+
+[node name="ItemTest" type="StaticBody2D" parent="."]
+position = Vector2(930, -93)
+collision_layer = 2
+script = ExtResource("3_u8jll")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ItemTest"]
+texture = ExtResource("4_yoyfi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemTest"]
+position = Vector2(4, 2)
+shape = SubResource("RectangleShape2D_2hdp7")
+
+[node name="Interactable" parent="ItemTest" instance=ExtResource("5_57ihi")]
+
+[node name="Area2D" type="Area2D" parent="ItemTest/Interactable"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemTest/Interactable/Area2D"]
+position = Vector2(4, 1.5)
+shape = SubResource("RectangleShape2D_pdcj2")
+debug_color = Color(0.396506, 0.469582, 1, 0.42)
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+z_index = -1
+offset_left = -396.0
+offset_top = -763.0
+offset_right = 2920.0
+offset_bottom = 1179.0
+color = Color(0, 0.054902, 0.298039, 0.2)
+
+[node name="ColorRect2" type="ColorRect" parent="Background"]
+z_index = -1
+offset_left = -396.0
+offset_top = -763.0
+offset_right = 2920.0
+offset_bottom = -302.0
+color = Color(0.231373, 0.145098, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Background"]
+z_index = -1
+offset_left = -396.0
+offset_top = 721.0
+offset_right = 2920.0
+offset_bottom = 1182.0
+color = Color(0.231373, 0.145098, 0, 0.254902)
+
+[node name="Background2" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Background2"]
+z_index = -1
+offset_left = -396.0
+offset_top = -763.0
+offset_right = 2920.0
+offset_bottom = 1179.0
+color = Color(0, 0.054902, 0.298039, 0.2)
+
+[node name="ColorRect2" type="ColorRect" parent="Background2"]
+z_index = -1
+offset_left = -396.0
+offset_top = -763.0
+offset_right = 2920.0
+offset_bottom = -302.0
+color = Color(0.231373, 0.145098, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Background2"]
+offset_left = -396.0
+offset_top = 721.0
+offset_right = 2920.0
+offset_bottom = 1182.0
+color = Color(0.231373, 0.145098, 0, 0.254902)
+
+[node name="Label" type="Label" parent="Background2"]
+z_index = -1
+offset_left = 1024.0
+offset_top = 112.0
+offset_right = 1526.0
+offset_bottom = 386.0
+text = "HALL"
+label_settings = SubResource("LabelSettings_og27l")
+
+[node name="Label2" type="Label" parent="Background2"]
+offset_left = 1156.0
+offset_top = -594.0
+offset_right = 1658.0
+offset_bottom = -320.0
+text = "WALL"
+label_settings = SubResource("LabelSettings_0s367")
+
+[node name="Label3" type="Label" parent="Background2"]
+offset_left = 1130.0
+offset_top = 848.0
+offset_right = 1632.0
+offset_bottom = 1122.0
+text = "WALL"
+label_settings = SubResource("LabelSettings_0s367")
+
+[node name="Donald-trump-png-4" type="Sprite2D" parent="Background2"]
+z_index = 1
+position = Vector2(558, -531)
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("6_k6fwy")
+
+[node name="Annaffiatoio" type="Sprite2D" parent="."]
+position = Vector2(1639, -310)
+texture = ExtResource("7_arjki")
+
+[node name="OminoRosso" type="Sprite2D" parent="."]
+position = Vector2(645, -350)
+texture = ExtResource("8_muqft")
+
+[node name="Fumetto" type="Sprite2D" parent="."]
+position = Vector2(562, -510)
+texture = ExtResource("9_d4su1")
+
+[connection signal="interacted" from="ItemTest/Interactable" to="ItemTest" method="_on_interactable_interacted"]
