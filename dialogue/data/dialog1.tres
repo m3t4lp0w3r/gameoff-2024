@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=3 format=3 uid="uid://bdvot23febb1r"]
+
+[ext_resource type="Script" path="res://dialogue/data/dialog_data.gd" id="1_akfjt"]
+[ext_resource type="Texture2D" uid="uid://x01qfcfa3ev7" path="res://credits/Credits/Simone.png" id="1_xtifh"]
+
+[resource]
+script = ExtResource("1_akfjt")
+dialogue_text = Array[String](["Prova testo", "Prova testo wwwwwwwwwwwwww"])
+character_image = ExtResource("1_xtifh")
+text_name = "Night Guardian"
