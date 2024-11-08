@@ -22,6 +22,12 @@ TriggersSystem="*res://global/global_trigger_system/global_triggers.tscn"
 LevelSystem="*res://global/global_level_system/level_system.tscn"
 AudioSystem="*res://global/global_audio_system/audio_system.tscn"
 InventorySystem="*res://inventory/inventory.tscn"
+TaskSystem="*res://task_system/task_system.tscn"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [input]
 

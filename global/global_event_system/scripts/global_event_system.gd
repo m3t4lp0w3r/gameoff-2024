@@ -1,7 +1,7 @@
 extends Node2D
 
-signal clue_completed(clue_id : String)
-signal clue_table_completed()
+signal task_completed(task_id : String)
+signal all_task_completed()
 
 #TOOO this should be moved insiede the audio system
 signal set_volume(bus : String, volume : float)
