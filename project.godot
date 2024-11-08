@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 EventSystem="*res://global/global_event_system/global_event_system.tscn"
+TriggersSystem="*res://global/global_trigger_system/global_triggers.tscn"
 LevelSystem="*res://global/global_level_system/level_system.tscn"
 AudioSystem="*res://global/global_audio_system/audio_system.tscn"
 InventorySystem="*res://inventory/inventory.tscn"
