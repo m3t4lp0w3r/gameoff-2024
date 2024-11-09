@@ -6,7 +6,7 @@
 
 [sub_resource type="Animation" id="Animation_enrna"]
 resource_name = "boss_walk_talk"
-length = 7.0
+length = 13.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -14,10 +14,10 @@ tracks/0/path = NodePath("Boss:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(1.53333, 2.03333, 2.53333, 5.56667, 6.46667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(1.53333, 2.03333, 2.53333, 5.56667, 6.46667, 8.1, 9.5, 11.0333, 12.4667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(364, 60), Vector2(374, 269), Vector2(853, 272), Vector2(853, 272), Vector2(847, -91.9999)]
+"values": [Vector2(364, 60), Vector2(374, 269), Vector2(853, 272), Vector2(853, 272), Vector2(847, -91.9999), Vector2(847, -91.9999), Vector2(836, 114), Vector2(836, 114), Vector2(840, -106)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -38,9 +38,15 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 5.96667),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5.96667, 8.13333, 12.4667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "values": [{
+"args": [],
+"method": &"start_cutscene"
+}, {
+"args": [],
+"method": &"end_cutscene"
+}, {
 "args": [],
 "method": &"start_cutscene"
 }, {
@@ -71,6 +77,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Label3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 9.5, 11),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
 }
 
 [sub_resource type="Animation" id="Animation_owidm"]
@@ -123,6 +141,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 1)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Label3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l5qpl"]
 _data = {
@@ -157,6 +187,14 @@ offset_right = 964.0
 offset_bottom = 178.0
 text = "Torna a fare il tuo lavoro !!!
 "
+
+[node name="Label3" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 645.0
+offset_top = 187.0
+offset_right = 1038.0
+offset_bottom = 236.0
+text = "Ah, dimenticavo, gli straordinari non sono pagati ..."
 
 [node name="Boss" type="Sprite2D" parent="."]
 position = Vector2(364, 60)
