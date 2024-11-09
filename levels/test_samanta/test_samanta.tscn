@@ -43,6 +43,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="ItemCollision" type="StaticBody2D" parent="Item"]
+collision_layer = 2
 
 [node name="MouseSprite" type="Sprite2D" parent="Item/ItemCollision"]
 scale = Vector2(0.376, 0.376)
@@ -156,3 +157,7 @@ vertical_alignment = 1
 [node name="Player" parent="." instance=ExtResource("10_31avi")]
 unique_name_in_owner = true
 position = Vector2(451, 363)
+
+[connection signal="interacted" from="Item/ItemCollision/Interactable" to="Item" method="_on_interactable_interacted"]
+[connection signal="player_enter" from="Item/ItemCollision/Interactable" to="Item" method="_on_interactable_player_enter"]
+[connection signal="player_exit" from="Item/ItemCollision/Interactable" to="Item" method="_on_interactable_player_exit"]

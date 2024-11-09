@@ -20,7 +20,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if dialogue_box.is_visible_in_tree():
 		text_label.visible_characters += speed_text
-		dialog_data[dialog_index]
+		
 		for dialog in dialog_data:
 			var dialog_size = dialog.dialogue_text.size()
 			if Input.is_action_just_pressed("interact"):

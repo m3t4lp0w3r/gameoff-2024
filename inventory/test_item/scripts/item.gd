@@ -3,14 +3,18 @@ extends Node2D
 @export var dialog : DialogText
 var dialog_start = false
 
-#
-### Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("interact"):
-		DialogueSystem.start_dialog(dialog)
+var press_start = false
 
 
+func _on_interactable_player_enter() -> void:
+	press_start = true
+	$Label.show()
 
 
-	
-	
+func _on_interactable_player_exit() -> void:
+	press_start = false
+	$Label.hide()
+
+
+func _on_interactable_interacted() -> void:
+	DialogueSystem.start_dialog(dialog)
