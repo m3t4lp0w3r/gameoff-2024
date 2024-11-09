@@ -1,5 +1,5 @@
-extends Node
-class_name DialogData
+extends Resource
+class_name DialogText
 
 @export var dialogue_text: Array[String]
 @export var character_image : Texture2D

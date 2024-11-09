@@ -1,38 +1,35 @@
-[gd_scene load_steps=15 format=3 uid="uid://1dtl451uouxy"]
+[gd_scene load_steps=16 format=3 uid="uid://1dtl451uouxy"]
 
 [ext_resource type="Texture2D" uid="uid://ckjcq1uog4sk5" path="res://icon.svg" id="1_ki2qy"]
 [ext_resource type="Script" path="res://inventory/test_item/scripts/item.gd" id="1_s60ta"]
+[ext_resource type="Resource" uid="uid://c8ov4d2wtt551" path="res://dialogue/data/dialog2.tres" id="2_dpptp"]
 [ext_resource type="Resource" uid="uid://ddxepx7m1r5b0" path="res://resource/items/Item1.tres" id="2_r0oxu"]
 [ext_resource type="Texture2D" uid="uid://x01qfcfa3ev7" path="res://credits/Credits/Simone.png" id="2_sx5e7"]
 [ext_resource type="Texture2D" uid="uid://cxx06vetlfmqp" path="res://splash_screen/STAR dice white.png" id="3_o8ktu"]
+[ext_resource type="PackedScene" uid="uid://bp55k82sv4ufj" path="res://interactable/interactable.tscn" id="3_rlbab"]
 [ext_resource type="Script" path="res://inventory/test_drop/scripts/drop.gd" id="3_yhbhj"]
 [ext_resource type="Script" path="res://inventory/test_item/scripts/item2.gd" id="4_4bqav"]
 [ext_resource type="Resource" uid="uid://ch5qedq8g1mox" path="res://resource/items/Item2.tres" id="4_lblrq"]
+[ext_resource type="PackedScene" uid="uid://b1124l3cpps2k" path="res://player/player.tscn" id="10_31avi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13g8g"]
 size = Vector2(78, 74)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmype"]
-size = Vector2(98, 101)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_as3mg"]
+size = Vector2(86, 82)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gicm0"]
 size = Vector2(94, 101)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qcprd"]
-size = Vector2(114, 119)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h8hj2"]
 size = Vector2(89, 85)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5asm"]
-size = Vector2(109, 119)
 
 [node name="TestSamanta" type="Node2D"]
 
 [node name="Item" type="Node2D" parent="."]
 position = Vector2(300, 177)
 script = ExtResource("1_s60ta")
-item_data = ExtResource("2_r0oxu")
+dialog = ExtResource("2_dpptp")
 
 [node name="Label" type="Label" parent="Item"]
 visible = false
@@ -55,11 +52,11 @@ texture = ExtResource("2_sx5e7")
 position = Vector2(-5, 3)
 shape = SubResource("RectangleShape2D_13g8g")
 
-[node name="InteractionArea2D" type="Area2D" parent="Item/ItemCollision"]
+[node name="Interactable" parent="Item/ItemCollision" instance=ExtResource("3_rlbab")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Item/ItemCollision/InteractionArea2D"]
-position = Vector2(-4, 1.5)
-shape = SubResource("RectangleShape2D_mmype")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item/ItemCollision/Interactable"]
+position = Vector2(-5, 3)
+shape = SubResource("RectangleShape2D_as3mg")
 
 [node name="Item2" type="Node2D" parent="."]
 position = Vector2(756, 314)
@@ -85,6 +82,7 @@ vertical_alignment = 1
 
 [node name="Item2Collision" type="StaticBody2D" parent="Item2"]
 position = Vector2(-1, 44)
+collision_mask = 19
 
 [node name="StarDiceSprite" type="Sprite2D" parent="Item2/Item2Collision"]
 scale = Vector2(0.215, 0.215)
@@ -93,12 +91,6 @@ texture = ExtResource("3_o8ktu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Item2/Item2Collision"]
 position = Vector2(-1, -3.5)
 shape = SubResource("RectangleShape2D_gicm0")
-
-[node name="Area" type="Area2D" parent="Item2/Item2Collision"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Item2/Item2Collision/Area"]
-position = Vector2(2, -4.5)
-shape = SubResource("RectangleShape2D_qcprd")
 
 [node name="Drop" type="Node2D" parent="."]
 position = Vector2(193, 325)
@@ -151,12 +143,6 @@ texture = ExtResource("1_ki2qy")
 position = Vector2(-20.5, 21.5)
 shape = SubResource("RectangleShape2D_h8hj2")
 
-[node name="Area2D" type="Area2D" parent="Drop/StaticBody2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop/StaticBody2D/Area2D"]
-position = Vector2(-18.5, 15.5)
-shape = SubResource("RectangleShape2D_u5asm")
-
 [node name="Label2" type="Label" parent="Drop"]
 visible = false
 offset_left = 109.0
@@ -167,9 +153,6 @@ text = "Item not found"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="mouse_entered" from="Item/ItemCollision/InteractionArea2D" to="Item" method="_on_interaction_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Item/ItemCollision/InteractionArea2D" to="Item" method="_on_interaction_area_2d_mouse_exited"]
-[connection signal="mouse_entered" from="Item2/Item2Collision/Area" to="Item2" method="_on_area_mouse_entered"]
-[connection signal="mouse_exited" from="Item2/Item2Collision/Area" to="Item2" method="_on_area_mouse_exited"]
-[connection signal="mouse_entered" from="Drop/StaticBody2D/Area2D" to="Drop" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Drop/StaticBody2D/Area2D" to="Drop" method="_on_area_2d_mouse_exited"]
+[node name="Player" parent="." instance=ExtResource("10_31avi")]
+unique_name_in_owner = true
+position = Vector2(451, 363)
