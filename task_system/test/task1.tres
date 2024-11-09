@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_tq4ds")
 id = "task1"
-description = "Primo task della lista"
+description = "Prendi mouse"
 complete = false

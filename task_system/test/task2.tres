@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_quj2h")
 id = "task2"
-description = "Secondo task della lista della UI"
-complete = true
+description = "prendi pen"
+complete = false
