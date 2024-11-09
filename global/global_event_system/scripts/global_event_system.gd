@@ -7,3 +7,7 @@ signal all_task_completed()
 signal set_volume(bus : String, volume : float)
 signal play_sound(audio_key : String, bus : String)
 signal play_music(audio_key : String)
+
+#inventory
+signal picked_up_item(item_id : String)
+signal dropped_item(item_id : String)

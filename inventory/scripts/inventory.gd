@@ -11,8 +11,9 @@ func pick_up(data: ItemData):
 	slot.expand_mode = TextureRect.EXPAND_FIT_WIDTH
 	inventory_slot.add_child(slot)
 	print(items_array)
+	EventSystem.picked_up_item.emit(data.id)
 	
-
+#TODO maybe we can change this to not check for the texture
 func drop_item(data: ItemData):
 	var item_index = items_array.find(data)
 	items_array.remove_at(item_index)
@@ -21,7 +22,7 @@ func drop_item(data: ItemData):
 		var child = inventory_slot.get_child(slot)
 		if child.texture == data.icon:
 			inventory_slot.remove_child(child)
-	
+	EventSystem.dropped_item.emit(data.id)
 
 func check_item(data: ItemData):
 	for item in items_array:
