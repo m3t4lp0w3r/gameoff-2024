@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ckjcq1uog4sk5" path="res://icon.svg" id="1_lgp2g"]
 
-[node name="test_leonardo" type="Node2D"]
+[node name="TestLeonardo" type="Node2D"]
 
 [node name="Node2D" type="Node2D" parent="."]
 
