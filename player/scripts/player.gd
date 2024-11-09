@@ -7,10 +7,22 @@ extends CharacterBody2D
 @onready var ray_cast = $RayCast2D
 
 var raycast_target : Vector2
+var entered_interactable = null
 
 func _process(delta: float) -> void:
 	
 	ray_cast.target_position = raycast_target
+
+	if ray_cast.is_colliding():
+		var area_collider = ray_cast.get_collider()
+		if area_collider != null and area_collider is Interactable:
+			if entered_interactable == null:
+				area_collider.player_enter_trigger()
+				entered_interactable = area_collider
+	else:
+		if entered_interactable != null:
+			entered_interactable.player_exit_trigger()
+			entered_interactable = null
 	
 	if Input.is_action_just_pressed("interact") :
 		if ray_cast.is_colliding():

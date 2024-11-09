@@ -106,3 +106,5 @@ position = Vector2(80, 421)
 texture = ExtResource("3_6efru")
 
 [connection signal="interacted" from="ItemTest/Interactable" to="ItemTest" method="_on_interactable_interacted"]
+[connection signal="player_enter" from="ItemTest/Interactable" to="ItemTest" method="_on_interactable_player_enter"]
+[connection signal="player_exit" from="ItemTest/Interactable" to="ItemTest" method="_on_interactable_player_exit"]
