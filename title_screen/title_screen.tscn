@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bn66sogio8l8v"]
+[gd_scene load_steps=5 format=3 uid="uid://bn66sogio8l8v"]
 
 [ext_resource type="Script" path="res://title_screen/scripts/ui_state_machine/ui_state_machine.gd" id="1_i8mlm"]
 [ext_resource type="Script" path="res://title_screen/scripts/ui_state_machine/ui_state_main_menu.gd" id="1_ya0a1"]
 [ext_resource type="Script" path="res://title_screen/scripts/ui_state_machine/ui_state_settings.gd" id="2_ovesd"]
+[ext_resource type="PackedScene" uid="uid://r6wtux0ghoss" path="res://settings_screen/volume_slider.tscn" id="4_nqphs"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -60,7 +61,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "Hidden Player"
+text = "Hidden Eyes"
 vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="StateMenu/MainMenu/MainPanel"]
@@ -156,6 +157,27 @@ offset_bottom = 55.0
 theme_override_font_sizes/font_size = 20
 text = "Back"
 flat = true
+
+[node name="MasterVolume" parent="StateMenu/Settings/MainPanel" instance=ExtResource("4_nqphs")]
+layout_mode = 1
+offset_left = -55.0
+offset_top = 39.0
+offset_right = -15.0
+offset_bottom = 79.0
+
+[node name="MusicVolume" parent="StateMenu/Settings/MainPanel" instance=ExtResource("4_nqphs")]
+layout_mode = 1
+offset_left = -56.0
+offset_top = 74.0
+offset_right = -16.0
+offset_bottom = 114.0
+
+[node name="SfxVolume" parent="StateMenu/Settings/MainPanel" instance=ExtResource("4_nqphs")]
+layout_mode = 1
+offset_left = -56.0
+offset_top = 114.0
+offset_right = -16.0
+offset_bottom = 154.0
 
 [connection signal="pressed" from="StateMenu/MainMenu/MainPanel/VBoxContainer/NewGame" to="StateMenu/MainMenu" method="_on_new_game_pressed"]
 [connection signal="pressed" from="StateMenu/MainMenu/MainPanel/VBoxContainer/LoadGame" to="StateMenu/MainMenu" method="_on_load_game_pressed"]
