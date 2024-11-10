@@ -1,0 +1,174 @@
+[gd_scene load_steps=14 format=3 uid="uid://5jsc5febk7t7"]
+
+[ext_resource type="Texture2D" uid="uid://dkeeamjcpcrh" path="res://resource/assets/protagonista/fronte/Testa .png" id="1_pidv3"]
+[ext_resource type="Texture2D" uid="uid://07qdwydj7ijn" path="res://resource/assets/protagonista/fronte/Torso.png" id="2_onu4f"]
+[ext_resource type="Texture2D" uid="uid://c55nx44135cwp" path="res://resource/assets/protagonista/fronte/Bacino.png" id="3_d3jt1"]
+[ext_resource type="Texture2D" uid="uid://dfbgyfjbmgivx" path="res://resource/assets/protagonista/fronte/Braccio sx.png" id="4_evppj"]
+[ext_resource type="Texture2D" uid="uid://cby1e5tefoqs6" path="res://resource/assets/protagonista/fronte/ Braccio dx.png" id="5_t0jho"]
+[ext_resource type="Texture2D" uid="uid://cbm2wb6qlmwbm" path="res://resource/assets/protagonista/fronte/Gamba dx 1.png" id="6_al5a3"]
+[ext_resource type="Texture2D" uid="uid://djqjrl71uc082" path="res://resource/assets/protagonista/fronte/Gamba dx 2.png" id="7_2swfh"]
+[ext_resource type="Texture2D" uid="uid://by7gptrdx3ija" path="res://resource/assets/protagonista/fronte/Gamba sx 1.png" id="8_y135m"]
+[ext_resource type="Texture2D" uid="uid://v4vi3g1d747e" path="res://resource/assets/protagonista/fronte/Gamba sx 2.png" id="9_pf1li"]
+[ext_resource type="Texture2D" uid="uid://0pxyet1jlhqg" path="res://resource/assets/protagonista/fronte/Mano dx.png" id="10_4q84a"]
+[ext_resource type="Texture2D" uid="uid://dssc65uylv36r" path="res://resource/assets/protagonista/fronte/Mano sx.png" id="11_s4fdf"]
+[ext_resource type="Texture2D" uid="uid://bm44f36g4x07x" path="res://resource/assets/protagonista/fronte/Piede dx .png" id="12_v7eph"]
+[ext_resource type="Texture2D" uid="uid://cfopsi2qk11e7" path="res://resource/assets/protagonista/fronte/Piede sx.png" id="13_p7el2"]
+
+[node name="Player_animation" type="Node2D"]
+
+[node name="characterContainer" type="Node2D" parent="."]
+
+[node name="Body" type="Node2D" parent="characterContainer"]
+metadata/_edit_lock_ = true
+
+[node name="Testa" type="Sprite2D" parent="characterContainer/Body"]
+z_index = 1
+position = Vector2(0, -106)
+texture = ExtResource("1_pidv3")
+offset = Vector2(8, 43)
+metadata/_edit_lock_ = true
+
+[node name="Torso" type="Sprite2D" parent="characterContainer/Body"]
+texture = ExtResource("2_onu4f")
+offset = Vector2(8, -65)
+metadata/_edit_lock_ = true
+
+[node name="Bacino" type="Sprite2D" parent="characterContainer/Body"]
+z_index = -1
+position = Vector2(5, -64)
+texture = ExtResource("3_d3jt1")
+metadata/_edit_lock_ = true
+
+[node name="BraccioSx" type="Sprite2D" parent="characterContainer/Body"]
+z_index = -1
+position = Vector2(-1, -64)
+texture = ExtResource("4_evppj")
+metadata/_edit_lock_ = true
+
+[node name="BraccioDx" type="Sprite2D" parent="characterContainer/Body"]
+z_index = -1
+position = Vector2(19, -62)
+texture = ExtResource("5_t0jho")
+metadata/_edit_lock_ = true
+
+[node name="GambaDx1" type="Sprite2D" parent="characterContainer/Body"]
+z_index = -1
+position = Vector2(9, -61)
+texture = ExtResource("6_al5a3")
+metadata/_edit_lock_ = true
+
+[node name="GambaDx2" type="Sprite2D" parent="characterContainer/Body"]
+position = Vector2(10, -61)
+texture = ExtResource("7_2swfh")
+metadata/_edit_lock_ = true
+
+[node name="GambaSx1" type="Sprite2D" parent="characterContainer/Body"]
+z_index = -1
+position = Vector2(6, -63)
+texture = ExtResource("8_y135m")
+metadata/_edit_lock_ = true
+
+[node name="GambaSx2" type="Sprite2D" parent="characterContainer/Body"]
+position = Vector2(5, -61)
+texture = ExtResource("9_pf1li")
+metadata/_edit_lock_ = true
+
+[node name="ManoDx" type="Sprite2D" parent="characterContainer/Body"]
+position = Vector2(20, -57)
+texture = ExtResource("10_4q84a")
+metadata/_edit_lock_ = true
+
+[node name="ManoSx" type="Sprite2D" parent="characterContainer/Body"]
+position = Vector2(-1, -62)
+texture = ExtResource("11_s4fdf")
+metadata/_edit_lock_ = true
+
+[node name="PiedeDx" type="Sprite2D" parent="characterContainer/Body"]
+z_index = -1
+position = Vector2(13, -58)
+texture = ExtResource("12_v7eph")
+metadata/_edit_lock_ = true
+
+[node name="PiedeSx" type="Sprite2D" parent="characterContainer/Body"]
+z_index = -1
+position = Vector2(4, -57)
+texture = ExtResource("13_p7el2")
+metadata/_edit_lock_ = true
+
+[node name="Bones" type="Node2D" parent="characterContainer"]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="characterContainer/Bones"]
+
+[node name="Bacino" type="Bone2D" parent="characterContainer/Bones/Skeleton2D"]
+position = Vector2(0, 84)
+rotation = 0.0124437
+auto_calculate_length_and_angle = false
+length = 8.919
+bone_angle = 0.0
+
+[node name="GambaDx" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino"]
+position = Vector2(29.06, 4.63876)
+rotation = 1.48828
+scale = Vector2(1, 1)
+auto_calculate_length_and_angle = false
+length = 34.432
+bone_angle = 0.0
+
+[node name="Bone2D" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino/GambaDx"]
+position = Vector2(41.1944, -0.139492)
+rotation = 0.207541
+
+[node name="Bone2D" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino/GambaDx/Bone2D"]
+position = Vector2(36.1265, -2.62156)
+rotation = -1.10241
+auto_calculate_length_and_angle = false
+length = 25.216
+bone_angle = 0.0
+
+[node name="GambaSx" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino"]
+position = Vector2(-24.9607, 3.31085)
+rotation = 1.59671
+scale = Vector2(1, -1)
+auto_calculate_length_and_angle = false
+length = 34.432
+bone_angle = -38.919
+
+[node name="Bone2D" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino/GambaSx"]
+position = Vector2(41.1944, -0.139492)
+rotation = 0.207541
+
+[node name="Bone2D" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino/GambaSx/Bone2D"]
+position = Vector2(36.1265, -2.62156)
+rotation = 1.96885
+auto_calculate_length_and_angle = false
+length = 25.216
+bone_angle = 0.0
+
+[node name="Testa" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino"]
+position = Vector2(-1.46831, -117.991)
+rotation = -1.57694
+auto_calculate_length_and_angle = false
+length = 117.378
+bone_angle = 0.0
+
+[node name="BraccioSx" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino"]
+position = Vector2(-36.3909, -111.556)
+rotation = 2.31524
+
+[node name="Bone2D" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino/BraccioSx"]
+position = Vector2(73.872, -10.6265)
+rotation = -0.637244
+
+[node name="Bone2D" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino/BraccioSx/Bone2D"]
+position = Vector2(47.0221, -2.6314)
+rotation = -0.66304
+
+[node name="BraccioDx" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino"]
+position = Vector2(36.6781, -106.465)
+
+[node name="Bone2D" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino/BraccioDx"]
+position = Vector2(44.7805, 62.4476)
+
+[node name="Bone2D" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino/BraccioDx/Bone2D"]
+position = Vector2(-1.46478, 43.0216)
+rotation = 1.7678
