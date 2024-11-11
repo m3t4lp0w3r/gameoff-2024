@@ -1,10 +1,94 @@
-[gd_scene load_steps=3 format=3 uid="uid://1dtl451uouxy"]
+[gd_scene load_steps=7 format=3 uid="uid://luvsqjgy77ai"]
 
 [ext_resource type="Script" path="res://levels/test_samanta/scripts/test_samanta.gd" id="1_6joew"]
 [ext_resource type="PackedScene" uid="uid://b1124l3cpps2k" path="res://player/player.tscn" id="1_olj58"]
+[ext_resource type="PackedScene" uid="uid://cebw0e58m5xj5" path="res://camera/camera.tscn" id="2_7yb7b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5k3p"]
+size = Vector2(79, 1655.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8t8y"]
+size = Vector2(593, 54)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_reiyf"]
+radius = 190.032
 
 [node name="TestSamanta" type="Node2D"]
 script = ExtResource("1_6joew")
 
+[node name="FollowCamera" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("2_7yb7b")]
+player_ref = NodePath("../Player")
+
 [node name="Player" parent="." instance=ExtResource("1_olj58")]
 unique_name_in_owner = true
+position = Vector2(783, 325)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-364, 341)
+collision_layer = 34
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-79, -359)
+shape = SubResource("RectangleShape2D_w5k3p")
+debug_color = Color(0.787039, 0.275809, 0.826464, 0.42)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(1369, 326)
+collision_layer = 34
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-79, -359)
+shape = SubResource("RectangleShape2D_w5k3p")
+debug_color = Color(0.787039, 0.275809, 0.826464, 0.42)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-40, 755)
+rotation = 1.57079
+collision_layer = 34
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-0.00012207, -462.25)
+shape = SubResource("RectangleShape2D_w5k3p")
+debug_color = Color(0.787039, 0.275809, 0.826464, 0.42)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(-40, -806)
+rotation = 1.57079
+collision_layer = 34
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(-0.00012207, -462.25)
+shape = SubResource("RectangleShape2D_w5k3p")
+debug_color = Color(0.787039, 0.275809, 0.826464, 0.42)
+
+[node name="PlayerWall" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerWall"]
+position = Vector2(-31, -93)
+shape = SubResource("RectangleShape2D_o8t8y")
+debug_color = Color(0.570881, 0.54139, 0.357895, 0.42)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 226.0
+offset_top = 235.0
+offset_right = 514.0
+offset_bottom = 322.0
+theme_override_font_sizes/font_size = 40
+text = "FADE OUT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(360, 364)
+collision_layer = 34
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_reiyf")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

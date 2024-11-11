@@ -1,7 +1,9 @@
 extends Node2D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	TriggersSystem.update_trigger("fade_in", true)
-	
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body == %Player:
+		TriggersSystem.update_trigger("fade_out", true)
+		
