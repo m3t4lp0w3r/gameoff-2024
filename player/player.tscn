@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1124l3cpps2k"]
+[gd_scene load_steps=4 format=3 uid="uid://b1124l3cpps2k"]
 
 [ext_resource type="Texture2D" uid="uid://ckjcq1uog4sk5" path="res://icon.svg" id="1_jxb4s"]
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_ooyay"]
-[ext_resource type="Resource" uid="uid://bdvot23febb1r" path="res://dialogue/data/dialog1.tres" id="2_s54mw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bppr6"]
 size = Vector2(128, 128)
@@ -11,7 +10,6 @@ size = Vector2(128, 128)
 collision_mask = 6
 motion_mode = 1
 script = ExtResource("1_ooyay")
-dialog = ExtResource("2_s54mw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 1)

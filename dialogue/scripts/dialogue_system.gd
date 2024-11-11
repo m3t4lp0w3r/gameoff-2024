@@ -10,6 +10,7 @@ var dialogs : Array[DialogText] = []
 
 var text_index = 0
 var dialog_index = 0
+var started = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,16 +20,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if not started :
+		return
+	
 	if dialogue_box.is_visible():
 		text_label.visible_characters += speed_text
 
-				
-				
-				
 	if Input.is_action_just_pressed("interact"):
 		text_label.visible_characters = -1
 		if text_label.visible_ratio >= 1:
-			if text_index < dialogs.size() - 1:
+			if text_index < dialogs[dialog_index].dialogue_text.size() - 1:
 				text_index += 1
 				text_label.text = dialogs[dialog_index].dialogue_text[text_index]
 				text_label.visible_characters = 0
@@ -38,10 +39,14 @@ func _process(delta: float) -> void:
 func start_dialog(dialog : Array[DialogText]):
 	dialogue_box.show()
 	self.dialogs = dialog
+	text_index = 0
+	dialog_index = 0
 	text_label.text = dialogs[dialog_index].dialogue_text[text_index]
 	name_character.text = dialogs[dialog_index].text_name
 	image_character.texture = dialogs[dialog_index].character_image
 	text_label.visible_characters = 0
+	started = true
+	EventSystem.cutscene_started.emit()
 
 func next_dialog():
 	if dialog_index < dialogs.size() - 1:
@@ -53,3 +58,5 @@ func next_dialog():
 		text_label.visible_characters = 0
 	else:
 		dialogue_box.hide()
+		started = false
+		EventSystem.cutscene_finished.emit()
