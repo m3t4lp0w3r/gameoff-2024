@@ -66,19 +66,26 @@ grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.268003, 0.248541, 0.230064, 1)
 
-[node name="Character" type="TextureRect" parent="CanvasLayer/Control/DialogueBox"]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/DialogueBox"]
+layout_mode = 0
+offset_left = -90.0
+offset_top = -43.0
+offset_right = 41.0
+offset_bottom = 119.0
+
+[node name="Character" type="TextureRect" parent="CanvasLayer/Control/DialogueBox/Panel"]
 layout_mode = 1
-offset_left = -100.0
-offset_top = -63.0
-offset_right = 81.0
-offset_bottom = 124.0
+offset_left = 1.0
+offset_top = 13.0
+offset_right = 131.0
+offset_bottom = 151.0
 texture = ExtResource("2_mf8pt")
+expand_mode = 1
 
 [node name="DialogueText" type="RichTextLabel" parent="CanvasLayer/Control/DialogueBox"]
-visible = false
 layout_mode = 2
-offset_left = 124.0
-offset_right = 677.0
+offset_left = 66.0
+offset_right = 619.0
 offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 2

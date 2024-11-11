@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var dialog : DialogText
+@export var dialog : Array[DialogText]
 var dialog_start = false
 
 var press_start = false

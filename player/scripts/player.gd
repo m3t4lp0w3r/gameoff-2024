@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 @export var SPEED = 300.0
 @export var interact_distance = 100
-@export var dialog : DialogText
 
 @onready var ray_cast = $RayCast2D
 

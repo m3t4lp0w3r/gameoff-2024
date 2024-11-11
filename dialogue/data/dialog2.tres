@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("2_sxvm5")
-dialogue_text = Array[String](["Ok", "Va bene me ne vado sei cattivo."])
+dialogue_text = Array[String](["Ok."])
 character_image = ExtResource("1_iqla1")
 text_name = "Child 1"
