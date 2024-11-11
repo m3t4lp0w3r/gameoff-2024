@@ -23,16 +23,18 @@ func _process(delta: float) -> void:
 	if not started :
 		return
 	
-	if dialogue_box.is_visible():
+	if text_label.visible_ratio < 1:
 		text_label.visible_characters += speed_text
 
 	if Input.is_action_just_pressed("interact"):
-		text_label.visible_characters = -1
-		if text_label.visible_ratio >= 1:
+		if text_label.visible_ratio < 1:
+			text_label.visible_characters = -1
+		elif text_label.visible_ratio >= 1:
 			if text_index < dialogs[dialog_index].dialogue_text.size() - 1:
 				text_index += 1
 				text_label.text = dialogs[dialog_index].dialogue_text[text_index]
 				text_label.visible_characters = 0
+				text_label.visible_ratio = 0
 			else:
 				next_dialog()
 
@@ -45,6 +47,7 @@ func start_dialog(dialog : Array[DialogText]):
 	name_character.text = dialogs[dialog_index].text_name
 	image_character.texture = dialogs[dialog_index].character_image
 	text_label.visible_characters = 0
+	text_label.visible_ratio = 0
 	started = true
 	EventSystem.cutscene_started.emit()
 
@@ -56,6 +59,7 @@ func next_dialog():
 		name_character.text = dialogs[dialog_index].text_name
 		image_character.texture = dialogs[dialog_index].character_image
 		text_label.visible_characters = 0
+		text_label.visible_ratio = 0
 	else:
 		dialogue_box.hide()
 		started = false

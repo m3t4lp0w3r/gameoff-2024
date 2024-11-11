@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_akfjt")
-dialogue_text = Array[String](["Ehi", "Fuori di qui! Questo posto sta chiudendo"])
+dialogue_text = Array[String](["Ehi", "Fuori di qui! Questo posto sta chiudendo", "Inserisco un dialogo un pochino più lungo che serve per vedere se riesco a skippare alla fine del testo sempre con l'interact"])
 character_image = ExtResource("1_xtifh")
 text_name = "Night Guardian"
