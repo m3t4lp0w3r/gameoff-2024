@@ -16,6 +16,7 @@ func load_level(key: String) -> void:
 		if level == null:
 			printerr("LevelSystem Error level null.")
 		get_tree().change_scene_to_packed(level)
+		TransictionScene.fade_in()
 	else:
 		printerr("LevelSystem Error level not found.")
 	pass

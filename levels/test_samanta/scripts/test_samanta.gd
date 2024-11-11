@@ -1,9 +1,11 @@
 extends Node2D
 
-
-
+func _ready() -> void:
+	EventSystem.transition_fade_out_end.connect(animation_end)
+	
+func animation_end():
+	LevelSystem.load_level("Test Simon")
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == %Player:
-		TriggersSystem.update_trigger("fade_out", true)
-		
+		TransictionScene.fade_out()

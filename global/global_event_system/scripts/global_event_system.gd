@@ -7,3 +7,6 @@ signal clue_table_completed()
 signal set_volume(bus : String, volume : float)
 signal play_sound(audio_key : String, bus : String)
 signal play_music(audio_key : String)
+
+signal  transition_fade_in_end
+signal  transition_fade_out_end
