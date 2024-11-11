@@ -1,174 +1,368 @@
-[gd_scene load_steps=14 format=3 uid="uid://5jsc5febk7t7"]
+[gd_scene load_steps=11 format=3 uid="uid://5jsc5febk7t7"]
 
-[ext_resource type="Texture2D" uid="uid://dkeeamjcpcrh" path="res://resource/assets/protagonista/fronte/Testa .png" id="1_pidv3"]
-[ext_resource type="Texture2D" uid="uid://07qdwydj7ijn" path="res://resource/assets/protagonista/fronte/Torso.png" id="2_onu4f"]
-[ext_resource type="Texture2D" uid="uid://c55nx44135cwp" path="res://resource/assets/protagonista/fronte/Bacino.png" id="3_d3jt1"]
-[ext_resource type="Texture2D" uid="uid://dfbgyfjbmgivx" path="res://resource/assets/protagonista/fronte/Braccio sx.png" id="4_evppj"]
-[ext_resource type="Texture2D" uid="uid://cby1e5tefoqs6" path="res://resource/assets/protagonista/fronte/ Braccio dx.png" id="5_t0jho"]
-[ext_resource type="Texture2D" uid="uid://cbm2wb6qlmwbm" path="res://resource/assets/protagonista/fronte/Gamba dx 1.png" id="6_al5a3"]
-[ext_resource type="Texture2D" uid="uid://djqjrl71uc082" path="res://resource/assets/protagonista/fronte/Gamba dx 2.png" id="7_2swfh"]
-[ext_resource type="Texture2D" uid="uid://by7gptrdx3ija" path="res://resource/assets/protagonista/fronte/Gamba sx 1.png" id="8_y135m"]
-[ext_resource type="Texture2D" uid="uid://v4vi3g1d747e" path="res://resource/assets/protagonista/fronte/Gamba sx 2.png" id="9_pf1li"]
-[ext_resource type="Texture2D" uid="uid://0pxyet1jlhqg" path="res://resource/assets/protagonista/fronte/Mano dx.png" id="10_4q84a"]
-[ext_resource type="Texture2D" uid="uid://dssc65uylv36r" path="res://resource/assets/protagonista/fronte/Mano sx.png" id="11_s4fdf"]
-[ext_resource type="Texture2D" uid="uid://bm44f36g4x07x" path="res://resource/assets/protagonista/fronte/Piede dx .png" id="12_v7eph"]
-[ext_resource type="Texture2D" uid="uid://cfopsi2qk11e7" path="res://resource/assets/protagonista/fronte/Piede sx.png" id="13_p7el2"]
+[ext_resource type="Texture2D" uid="uid://cg77ryx6n5joh" path="res://resource/assets/protagonista/Nuovo fronte/Braccio Dx.png" id="1_qmq2x"]
+[ext_resource type="Texture2D" uid="uid://botw2d1iv3q6h" path="res://resource/assets/protagonista/Nuovo fronte/Braccio Sx.png" id="2_333n8"]
+[ext_resource type="Texture2D" uid="uid://d863fyruf7k1" path="res://resource/assets/protagonista/Nuovo fronte/Gamba Dx.png" id="3_xgjxp"]
+[ext_resource type="Texture2D" uid="uid://c155hsc8er4j0" path="res://resource/assets/protagonista/Nuovo fronte/Gamba Sx.png" id="4_8w6hx"]
+[ext_resource type="Texture2D" uid="uid://1aq3wfsugpc5" path="res://resource/assets/protagonista/Nuovo fronte/Chiavi.png" id="5_wasd6"]
+[ext_resource type="Texture2D" uid="uid://b0asiv3fs1scd" path="res://resource/assets/protagonista/Nuovo fronte/Torso.png" id="6_ayx02"]
+[ext_resource type="Texture2D" uid="uid://5fgx0h1j6cyq" path="res://resource/assets/protagonista/Nuovo fronte/Testa.png" id="7_uow4w"]
+
+[sub_resource type="Animation" id="Animation_40p71"]
+resource_name = "walk_front"
+length = 1.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Torso:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Torso:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-16, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -16, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -16, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Torso/GambaSx:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-31, -0.25, 0, 0.25, 0, -24, -0.25, 0, 0.25, 0, -24, -0.25, 0, 0.25, 0, -24, -0.25, 0, 0.25, 0, -32, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Torso/GambaSx:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-1, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0, 24, -0.25, 0, 0.25, 0, -6, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Torso/GambaDx:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(24, -0.25, 0, 0.25, 0, 24, -0.25, 0, 0.25, 0, 31, -0.25, 0, 0.25, 0, 24, -0.25, 0, 0.25, 0, 24, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Torso/GambaDx:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(24, -0.25, 0, 0.25, 0, -9, -0.25, 0, 0.25, 0, -4, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0, 24, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Torso/Testa:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(-4, -0.25, 0, 0.25, 0, -8.91409, -0.25, 0, 0.25, 0, -1.67249, -0.25, 0, 0.25, 0, -4, -0.171955, 1.16885, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4, 1.2, 1.6)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Torso/Testa:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(-97, -0.25, 0, 0.217528, 0.792831, -96, -0.25, 0, 0.217528, -0.207169, -99.8925, -0.182472, 0.23896, 0.217528, 0.361809, -97, -0.182472, -2.03262, 0.217528, 1.16137),
+"times": PackedFloat32Array(0, 0.4, 1.2, 1.6)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Torso/BraccioSx:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.172258, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.9, 1.6)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Torso/BraccioDx:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.0639021, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.9, 1.6)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Torso/Chiavi:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.123821, -0.25, 0, 0.25, 0, 0.37415, -0.25, 0, 0.25, 0, 0.563878, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 0.6, 1.2, 1.6)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Torso:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.024016, -0.25, 0, 0.25, 0, -0.0449108, -0.25, 0, 0.25, 0, 0.0467555, -0.25, 0, 0.25, 0, 0.0728799, -0.25, 0, 0.25, 0, 0.024016, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Torso/Testa:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.0732687, -0.25, 0, 0.25, 0, -0.110379, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4, 1.2, 1.6)
+}
+
+[sub_resource type="Animation" id="Animation_h6kk2"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Torso:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Torso:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-96, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Torso/GambaSx:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-24, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Torso/GambaSx:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Torso/GambaDx:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(24, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Torso/GambaDx:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Torso/Testa:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Torso/Testa:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-104, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Torso/BraccioSx:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Torso/BraccioDx:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.214613, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Torso/Chiavi:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.577113, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Torso:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.024016, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Torso/Testa:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.150939, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qk5rl"]
+_data = {
+"RESET": SubResource("Animation_h6kk2"),
+"walk_front": SubResource("Animation_40p71")
+}
 
 [node name="Player_animation" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [96.0, 80.0]
 
 [node name="characterContainer" type="Node2D" parent="."]
 
 [node name="Body" type="Node2D" parent="characterContainer"]
-metadata/_edit_lock_ = true
-
-[node name="Testa" type="Sprite2D" parent="characterContainer/Body"]
-z_index = 1
-position = Vector2(0, -106)
-texture = ExtResource("1_pidv3")
-offset = Vector2(8, 43)
-metadata/_edit_lock_ = true
-
-[node name="Torso" type="Sprite2D" parent="characterContainer/Body"]
-texture = ExtResource("2_onu4f")
-offset = Vector2(8, -65)
-metadata/_edit_lock_ = true
-
-[node name="Bacino" type="Sprite2D" parent="characterContainer/Body"]
-z_index = -1
-position = Vector2(5, -64)
-texture = ExtResource("3_d3jt1")
-metadata/_edit_lock_ = true
-
-[node name="BraccioSx" type="Sprite2D" parent="characterContainer/Body"]
-z_index = -1
-position = Vector2(-1, -64)
-texture = ExtResource("4_evppj")
-metadata/_edit_lock_ = true
-
-[node name="BraccioDx" type="Sprite2D" parent="characterContainer/Body"]
-z_index = -1
-position = Vector2(19, -62)
-texture = ExtResource("5_t0jho")
-metadata/_edit_lock_ = true
-
-[node name="GambaDx1" type="Sprite2D" parent="characterContainer/Body"]
-z_index = -1
-position = Vector2(9, -61)
-texture = ExtResource("6_al5a3")
-metadata/_edit_lock_ = true
-
-[node name="GambaDx2" type="Sprite2D" parent="characterContainer/Body"]
-position = Vector2(10, -61)
-texture = ExtResource("7_2swfh")
-metadata/_edit_lock_ = true
-
-[node name="GambaSx1" type="Sprite2D" parent="characterContainer/Body"]
-z_index = -1
-position = Vector2(6, -63)
-texture = ExtResource("8_y135m")
-metadata/_edit_lock_ = true
-
-[node name="GambaSx2" type="Sprite2D" parent="characterContainer/Body"]
-position = Vector2(5, -61)
-texture = ExtResource("9_pf1li")
-metadata/_edit_lock_ = true
-
-[node name="ManoDx" type="Sprite2D" parent="characterContainer/Body"]
-position = Vector2(20, -57)
-texture = ExtResource("10_4q84a")
-metadata/_edit_lock_ = true
-
-[node name="ManoSx" type="Sprite2D" parent="characterContainer/Body"]
-position = Vector2(-1, -62)
-texture = ExtResource("11_s4fdf")
-metadata/_edit_lock_ = true
-
-[node name="PiedeDx" type="Sprite2D" parent="characterContainer/Body"]
-z_index = -1
-position = Vector2(13, -58)
-texture = ExtResource("12_v7eph")
-metadata/_edit_lock_ = true
-
-[node name="PiedeSx" type="Sprite2D" parent="characterContainer/Body"]
-z_index = -1
-position = Vector2(4, -57)
-texture = ExtResource("13_p7el2")
-metadata/_edit_lock_ = true
 
 [node name="Bones" type="Node2D" parent="characterContainer"]
 
-[node name="Skeleton2D" type="Skeleton2D" parent="characterContainer/Bones"]
+[node name="Torso" type="Sprite2D" parent="."]
+position = Vector2(0, -96)
+rotation = 0.024016
+texture = ExtResource("6_ayx02")
+offset = Vector2(0, -48)
 
-[node name="Bacino" type="Bone2D" parent="characterContainer/Bones/Skeleton2D"]
-position = Vector2(0, 84)
-rotation = 0.0124437
-auto_calculate_length_and_angle = false
-length = 8.919
-bone_angle = 0.0
+[node name="Testa" type="Sprite2D" parent="Torso"]
+position = Vector2(0, -104)
+rotation = 0.150939
+texture = ExtResource("7_uow4w")
+offset = Vector2(16, -112)
 
-[node name="GambaDx" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino"]
-position = Vector2(29.06, 4.63876)
-rotation = 1.48828
-scale = Vector2(1, 1)
-auto_calculate_length_and_angle = false
-length = 34.432
-bone_angle = 0.0
+[node name="GambaDx" type="Sprite2D" parent="Torso"]
+z_index = -1
+position = Vector2(24, 8)
+texture = ExtResource("3_xgjxp")
+offset = Vector2(8, 32)
 
-[node name="Bone2D" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino/GambaDx"]
-position = Vector2(41.1944, -0.139492)
-rotation = 0.207541
+[node name="GambaSx" type="Sprite2D" parent="Torso"]
+z_index = -1
+position = Vector2(-24, 0)
+texture = ExtResource("4_8w6hx")
+offset = Vector2(-8, 32)
 
-[node name="Bone2D" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino/GambaDx/Bone2D"]
-position = Vector2(36.1265, -2.62156)
-rotation = -1.10241
-auto_calculate_length_and_angle = false
-length = 25.216
-bone_angle = 0.0
+[node name="BraccioDx" type="Sprite2D" parent="Torso"]
+z_index = -1
+position = Vector2(40, -88)
+rotation = -0.214613
+texture = ExtResource("1_qmq2x")
+offset = Vector2(24, 48)
 
-[node name="GambaSx" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino"]
-position = Vector2(-24.9607, 3.31085)
-rotation = 1.59671
-scale = Vector2(1, -1)
-auto_calculate_length_and_angle = false
-length = 34.432
-bone_angle = -38.919
+[node name="BraccioSx" type="Sprite2D" parent="Torso"]
+z_index = -1
+position = Vector2(-40, -96)
+texture = ExtResource("2_333n8")
+offset = Vector2(-24, 56)
 
-[node name="Bone2D" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino/GambaSx"]
-position = Vector2(41.1944, -0.139492)
-rotation = 0.207541
+[node name="Chiavi" type="Sprite2D" parent="Torso"]
+position = Vector2(35, -12)
+rotation = -0.577113
+texture = ExtResource("5_wasd6")
+offset = Vector2(13, 20)
 
-[node name="Bone2D" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino/GambaSx/Bone2D"]
-position = Vector2(36.1265, -2.62156)
-rotation = 1.96885
-auto_calculate_length_and_angle = false
-length = 25.216
-bone_angle = 0.0
-
-[node name="Testa" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino"]
-position = Vector2(-1.46831, -117.991)
-rotation = -1.57694
-auto_calculate_length_and_angle = false
-length = 117.378
-bone_angle = 0.0
-
-[node name="BraccioSx" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino"]
-position = Vector2(-36.3909, -111.556)
-rotation = 2.31524
-
-[node name="Bone2D" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino/BraccioSx"]
-position = Vector2(73.872, -10.6265)
-rotation = -0.637244
-
-[node name="Bone2D" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino/BraccioSx/Bone2D"]
-position = Vector2(47.0221, -2.6314)
-rotation = -0.66304
-
-[node name="BraccioDx" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino"]
-position = Vector2(36.6781, -106.465)
-
-[node name="Bone2D" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino/BraccioDx"]
-position = Vector2(44.7805, 62.4476)
-
-[node name="Bone2D" type="Bone2D" parent="characterContainer/Bones/Skeleton2D/Bacino/BraccioDx/Bone2D"]
-position = Vector2(-1.46478, 43.0216)
-rotation = 1.7678
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qk5rl")
+}
+speed_scale = 1.5
