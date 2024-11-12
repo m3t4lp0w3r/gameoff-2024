@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwlyefkomsfa6"]
+
+[ext_resource type="Script" path="res://task_system/scripts/task_system.gd" id="1_xj3qx"]
+[ext_resource type="PackedScene" uid="uid://cxrlpr7aaoasy" path="res://task_system/task_ui.tscn" id="2_pmb02"]
+
+[node name="TaskSystem" type="Node2D"]
+script = ExtResource("1_xj3qx")
+task_ui = ExtResource("2_pmb02")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -459.0
+offset_bottom = 343.0
+grow_horizontal = 0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+modulate = Color(1, 1, 1, 0.733333)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Panel"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2

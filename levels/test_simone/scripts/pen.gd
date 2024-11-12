@@ -9,4 +9,4 @@ func _on_interactable_interacted() -> void:
 	InventorySystem.pick_up(item)
 	hide()
 	process_mode = ProcessMode.PROCESS_MODE_DISABLED
-	EventSystem.task_completed.emit("task1")
+	EventSystem.task_completed.emit("task2")
