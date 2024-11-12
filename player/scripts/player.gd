@@ -4,10 +4,13 @@ extends CharacterBody2D
 @export var interact_distance = 100
 
 @onready var ray_cast = $RayCast2D
+@onready var sprite = $Sprite2D
 
 var raycast_target : Vector2
 var entered_interactable = null
 var in_cutscene : bool = false
+
+var direction : GameState.PLAYER_DIR
 
 func _ready() -> void:
 	EventSystem.cutscene_started.connect(enter_cutscene)
@@ -55,6 +58,27 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var x_direction := Input.get_axis("left", "right")
 	var y_direction := Input.get_axis("up", "down")
+	
+	if x_direction > 0:
+		direction = GameState.PLAYER_DIR.RIGHT
+	if x_direction < 0:
+		direction = GameState.PLAYER_DIR.LEFT
+	if y_direction > 0:
+		direction = GameState.PLAYER_DIR.DOWN
+	if y_direction < 0:
+		direction = GameState.PLAYER_DIR.UP
+		
+	if x_direction > 0 and y_direction > 0:
+		direction = GameState.PLAYER_DIR.DOWN_RIGHT
+	if x_direction > 0 and y_direction < 0:
+		direction = GameState.PLAYER_DIR.UP_RIGHT
+	if x_direction < 0 and y_direction > 0:
+		direction = GameState.PLAYER_DIR.DOWN_LEFT
+	if x_direction < 0 and y_direction < 0:
+		direction = GameState.PLAYER_DIR.UP_LEFT
+	
+	change_player_sprite()
+	
 	#if x_direction != 0 or y_direction != 0:
 	velocity = Vector2(x_direction, y_direction) * SPEED
 	
@@ -65,6 +89,25 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+#TODO this needs to be changed based on the sprites and animations
+func change_player_sprite():
+	match direction:
+		GameState.PLAYER_DIR.RIGHT:
+			sprite.region_rect = Rect2(0,32*2,32,32)
+		GameState.PLAYER_DIR.UP:
+			sprite.region_rect = Rect2(0,32*0,32,32)
+		GameState.PLAYER_DIR.DOWN:
+			sprite.region_rect = Rect2(0,32*4,32,32)
+		GameState.PLAYER_DIR.LEFT:
+			sprite.region_rect = Rect2(0,32*6,32,32)
+		GameState.PLAYER_DIR.DOWN_RIGHT:
+			sprite.region_rect = Rect2(0,32*3,32,32)
+		GameState.PLAYER_DIR.DOWN_LEFT:
+			sprite.region_rect = Rect2(0,32*5,32,32)
+		GameState.PLAYER_DIR.UP_RIGHT:
+			sprite.region_rect = Rect2(0,32*1,32,32)
+		GameState.PLAYER_DIR.UP_LEFT:
+			sprite.region_rect = Rect2(0,32*7,32,32)
 
 func _on_portal_trigger_area_entered(area: Area2D) -> void:
 	print("entered portal :", area.name)
@@ -73,4 +116,5 @@ func _on_portal_trigger_area_entered(area: Area2D) -> void:
 		var next_link = area.link_id
 		if next_scene != null and next_link != null:
 			GameState.last_player_link_id = next_link
+			GameState.last_player_dir = direction
 			LevelSystem.call_deferred("load_level", next_scene)

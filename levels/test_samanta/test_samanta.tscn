@@ -36,6 +36,7 @@ size = Vector2(89, 85)
 player_ref = NodePath("../Player")
 
 [node name="Link1" type="Node2D" parent="LinkSystem"]
+position = Vector2(877, 98)
 
 [node name="Item" type="Node2D" parent="."]
 position = Vector2(300, 177)
