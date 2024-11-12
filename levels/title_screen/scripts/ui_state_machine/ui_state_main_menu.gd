@@ -27,11 +27,8 @@ func _on_exit_pressed():
 
 
 func _on_new_game_pressed() -> void:
-	pass
-	#SaveSystem.delete_game()
-	#SaveSystem.save_data = SaveData.new()
-	#SaveSystem.save_game()
-	#LevelSystem.load_level("level_1")
+	LevelSystem.load_level("first day cutscene", true)
+	EventSystem.show_hud.emit()
 
 func _on_load_game_pressed():
 	pass

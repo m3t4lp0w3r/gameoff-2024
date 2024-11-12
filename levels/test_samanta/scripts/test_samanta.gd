@@ -4,7 +4,7 @@ func _ready() -> void:
 	EventSystem.transition_fade_out_end.connect(animation_end)
 	
 func animation_end():
-	LevelSystem.load_level("Test Simon")
+	LevelSystem.load_level("Test Simon", true)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == %Player:

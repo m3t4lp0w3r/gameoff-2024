@@ -10,13 +10,14 @@ func _ready() -> void:
 	for data in levels_resources:
 		levels[data.name] = data.scene
 
-func load_level(key: String) -> void:
+func load_level(key: String, transition: bool = false) -> void:
 	if levels.has(key) :
 		var level = levels[key]
 		if level == null:
 			printerr("LevelSystem Error level null.")
 		get_tree().change_scene_to_packed(level)
-		TransictionScene.fade_in()
+		if transition :
+			TransictionScene.fade_in()
 	else:
 		printerr("LevelSystem Error level not found.")
 	pass
