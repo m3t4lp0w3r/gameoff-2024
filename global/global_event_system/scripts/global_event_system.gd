@@ -13,3 +13,12 @@ signal picked_up_item(item_id : String)
 signal dropped_item(item_id : String)
 signal  transition_fade_in_end
 signal  transition_fade_out_end
+
+
+
+
+#UI
+signal hide_hud()
+
+signal cutscene_started()
+signal cutscene_finished()
