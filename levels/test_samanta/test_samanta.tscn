@@ -1,11 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://1dtl451uouxy"]
+[gd_scene load_steps=20 format=3 uid="uid://1dtl451uouxy"]
 
+[ext_resource type="PackedScene" uid="uid://x1in8gvchlxv" path="res://link_system/link_system.tscn" id="1_73o8s"]
 [ext_resource type="Texture2D" uid="uid://ckjcq1uog4sk5" path="res://icon.svg" id="1_ki2qy"]
 [ext_resource type="Script" path="res://inventory/test_item/scripts/item.gd" id="1_s60ta"]
 [ext_resource type="Resource" uid="uid://c8ov4d2wtt551" path="res://dialogue/data/dialog2.tres" id="2_dpptp"]
 [ext_resource type="Resource" uid="uid://ddxepx7m1r5b0" path="res://resource/items/Item1.tres" id="2_r0oxu"]
 [ext_resource type="Texture2D" uid="uid://x01qfcfa3ev7" path="res://credits/Credits/Simone.png" id="2_sx5e7"]
 [ext_resource type="Script" path="res://dialogue/data/dialog_data.gd" id="2_upk1u"]
+[ext_resource type="PackedScene" uid="uid://2wl7s0b74cst" path="res://link_system/link.tscn" id="2_xvdjd"]
 [ext_resource type="Texture2D" uid="uid://cxx06vetlfmqp" path="res://splash_screen/STAR dice white.png" id="3_o8ktu"]
 [ext_resource type="PackedScene" uid="uid://bp55k82sv4ufj" path="res://interactable/interactable.tscn" id="3_rlbab"]
 [ext_resource type="Resource" uid="uid://bdvot23febb1r" path="res://dialogue/data/dialog1.tres" id="3_rtj61"]
@@ -14,11 +16,11 @@
 [ext_resource type="Resource" uid="uid://ch5qedq8g1mox" path="res://resource/items/Item2.tres" id="4_lblrq"]
 [ext_resource type="PackedScene" uid="uid://b1124l3cpps2k" path="res://player/player.tscn" id="10_31avi"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5k3p"]
-size = Vector2(79, 1655.5)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_as3mg"]
 size = Vector2(86, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5k3p"]
+size = Vector2(79, 1655.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gicm0"]
 size = Vector2(94, 101)
@@ -27,6 +29,13 @@ size = Vector2(94, 101)
 size = Vector2(89, 85)
 
 [node name="TestSamanta" type="Node2D"]
+
+[node name="LinkSystem" parent="." node_paths=PackedStringArray("links") instance=ExtResource("1_73o8s")]
+links = [NodePath("Link")]
+
+[node name="Link" parent="LinkSystem" instance=ExtResource("2_xvdjd")]
+position = Vector2(881, 47)
+id = "link1"
 
 [node name="Item" type="Node2D" parent="."]
 position = Vector2(300, 177)
@@ -51,16 +60,16 @@ collision_layer = 2
 scale = Vector2(0.376, 0.376)
 texture = ExtResource("2_sx5e7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-79, -359)
-shape = SubResource("RectangleShape2D_w5k3p")
-debug_color = Color(0.787039, 0.275809, 0.826464, 0.42)
-
 [node name="Interactable" parent="Item/ItemCollision" instance=ExtResource("3_rlbab")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Item/ItemCollision/Interactable"]
 position = Vector2(-5, 3)
 shape = SubResource("RectangleShape2D_as3mg")
+
+[node name="StaticBody2D#CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-79, -359)
+shape = SubResource("RectangleShape2D_w5k3p")
+debug_color = Color(0.787039, 0.275809, 0.826464, 0.42)
 
 [node name="Item2" type="Node2D" parent="."]
 position = Vector2(756, 314)
@@ -101,16 +110,6 @@ position = Vector2(193, 325)
 script = ExtResource("3_yhbhj")
 item_data = ExtResource("2_r0oxu")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 226.0
-offset_top = 235.0
-offset_right = 514.0
-offset_bottom = 322.0
-theme_override_font_sizes/font_size = 40
-text = "FADE OUT"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Label3" type="Label" parent="Drop"]
 visible = false
 anchors_preset = 5
@@ -150,6 +149,16 @@ offset_top = 53.0
 offset_right = 237.0
 offset_bottom = 110.0
 text = "Item not found"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 226.0
+offset_top = 235.0
+offset_right = 514.0
+offset_bottom = 322.0
+theme_override_font_sizes/font_size = 40
+text = "FADE OUT"
 horizontal_alignment = 1
 vertical_alignment = 1
 

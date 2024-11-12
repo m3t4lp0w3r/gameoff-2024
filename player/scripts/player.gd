@@ -64,3 +64,14 @@ func _physics_process(delta: float) -> void:
 	velocity.move_toward(Vector2.ZERO, SPEED)
 
 	move_and_slide()
+
+
+func _on_portal_trigger_area_entered(area: Area2D) -> void:
+	print("entered portal :", area.name)
+	if area is Portal:
+		var next_scene = area.level_id
+		var next_link = area.link_id
+		if next_scene != null and next_link != null:
+			GameState.last_player_link_id = next_link
+			LevelSystem.load_level(next_scene)
+	pass # Replace with function body.

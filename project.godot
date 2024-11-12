@@ -25,6 +25,7 @@ InventorySystem="*res://inventory/inventory.tscn"
 DialogueSystem="*res://dialogue/dialogue_system.tscn"
 TransictionScene="*res://transiction/transiction_scene.tscn"
 TaskSystem="*res://task_system/task_system.tscn"
+GameState="*res://global/global_game_state/global_game_state.tscn"
 
 [display]
 
@@ -72,3 +73,4 @@ interact={
 2d_physics/layer_4="Npcs"
 2d_physics/layer_5="Camera"
 2d_physics/layer_6="Camera Walls"
+2d_physics/layer_7="Portal"
