@@ -13,4 +13,5 @@ func _process(delta):
 	pass
 
 func endSpashScreen():
-	end_splash.emit()
+	#end_splash.emit()
+	LevelSystem.load_level("main menu")
