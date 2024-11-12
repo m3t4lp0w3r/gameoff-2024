@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x01qfcfa3ev7"
-path="res://.godot/imported/Simone.png-55abcdc349485058704ab589a9715551.ctex"
+uid="uid://d1epgmdlfdngl"
+path="res://.godot/imported/the_end_StarDice_gameoff.png-bb447d0d61e312fc949ae573abb878a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://credits/Credits/Simone.png"
-dest_files=["res://.godot/imported/Simone.png-55abcdc349485058704ab589a9715551.ctex"]
+source_file="res://levels/credits/Credits/the_end_StarDice_gameoff.png"
+dest_files=["res://.godot/imported/the_end_StarDice_gameoff.png-bb447d0d61e312fc949ae573abb878a8.ctex"]
 
 [params]
 

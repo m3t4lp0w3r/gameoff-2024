@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k7vmromfr4wu"
-path="res://.godot/imported/Michele.png-40f092190b30c0e53774047c311c1498.ctex"
+uid="uid://cepit1b3crehm"
+path="res://.godot/imported/Claudio.png-71659307b42eb4697cfc762da29a54c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://credits/Credits/Michele.png"
-dest_files=["res://.godot/imported/Michele.png-40f092190b30c0e53774047c311c1498.ctex"]
+source_file="res://levels/credits/Credits/Claudio.png"
+dest_files=["res://.godot/imported/Claudio.png-71659307b42eb4697cfc762da29a54c7.ctex"]
 
 [params]
 

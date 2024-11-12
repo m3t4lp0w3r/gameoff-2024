@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c3k6y8yqg3qju"]
 
-[ext_resource type="Script" path="res://splash_screen/splash_screen.gd" id="1_njb41"]
-[ext_resource type="Texture2D" uid="uid://cxx06vetlfmqp" path="res://splash_screen/STAR dice white.png" id="2_iptse"]
+[ext_resource type="Script" path="res://levels/splash_screen/splash_screen.gd" id="1_njb41"]
+[ext_resource type="Texture2D" uid="uid://cxx06vetlfmqp" path="res://levels/splash_screen/STAR dice white.png" id="2_iptse"]
 
 [sub_resource type="Animation" id="Animation_ypau4"]
 length = 0.001

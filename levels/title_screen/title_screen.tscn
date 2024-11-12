@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bn66sogio8l8v"]
 
-[ext_resource type="Script" path="res://title_screen/scripts/ui_state_machine/ui_state_machine.gd" id="1_i8mlm"]
-[ext_resource type="Script" path="res://title_screen/scripts/ui_state_machine/ui_state_main_menu.gd" id="1_ya0a1"]
-[ext_resource type="Script" path="res://title_screen/scripts/ui_state_machine/ui_state_settings.gd" id="2_ovesd"]
+[ext_resource type="Script" path="res://levels/title_screen/scripts/ui_state_machine/ui_state_machine.gd" id="1_i8mlm"]
+[ext_resource type="Script" path="res://levels/title_screen/scripts/ui_state_machine/ui_state_main_menu.gd" id="1_ya0a1"]
+[ext_resource type="Script" path="res://levels/title_screen/scripts/ui_state_machine/ui_state_settings.gd" id="2_ovesd"]
 [ext_resource type="PackedScene" uid="uid://r6wtux0ghoss" path="res://settings_screen/volume_slider.tscn" id="4_nqphs"]
 
 [node name="TitleScreen" type="Control"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvevodjibvejg"
-path="res://.godot/imported/Samuele.png-1b28ff7984fd4fc2876d16d8ba4cc1cb.ctex"
+uid="uid://x01qfcfa3ev7"
+path="res://.godot/imported/Simone.png-7d536269973178dfc5cd155c87d43ae5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://credits/Credits/Samuele.png"
-dest_files=["res://.godot/imported/Samuele.png-1b28ff7984fd4fc2876d16d8ba4cc1cb.ctex"]
+source_file="res://levels/credits/Credits/Simone.png"
+dest_files=["res://.godot/imported/Simone.png-7d536269973178dfc5cd155c87d43ae5.ctex"]
 
 [params]
 

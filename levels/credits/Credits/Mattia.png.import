@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dajgyvjefmeg4"
-path="res://.godot/imported/Kevin.png-fd673826f5523e28e986c5d3a7531625.ctex"
+uid="uid://xcwf5re384c8"
+path="res://.godot/imported/Mattia.png-92142df8a20f02e5af5a5475e48355a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://credits/Credits/Kevin.png"
-dest_files=["res://.godot/imported/Kevin.png-fd673826f5523e28e986c5d3a7531625.ctex"]
+source_file="res://levels/credits/Credits/Mattia.png"
+dest_files=["res://.godot/imported/Mattia.png-92142df8a20f02e5af5a5475e48355a7.ctex"]
 
 [params]
 

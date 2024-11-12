@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jjlk8hmeppqv"
-path="res://.godot/imported/the_end_def.png-0389d6f616a424a1989e180f7a848654.ctex"
+uid="uid://k7vmromfr4wu"
+path="res://.godot/imported/Michele.png-e003d54b13fbd25bacb17aa7263f87a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://credits/Credits/the_end_def.png"
-dest_files=["res://.godot/imported/the_end_def.png-0389d6f616a424a1989e180f7a848654.ctex"]
+source_file="res://levels/credits/Credits/Michele.png"
+dest_files=["res://.godot/imported/Michele.png-e003d54b13fbd25bacb17aa7263f87a6.ctex"]
 
 [params]
 

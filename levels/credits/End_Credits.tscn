@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bw17dtk8hgbyn"]
 
-[ext_resource type="Script" path="res://credits/End_Credits.gd" id="1_whf18"]
-[ext_resource type="Texture2D" uid="uid://d1epgmdlfdngl" path="res://credits/Credits/the_end_StarDice_gameoff.png" id="2_jnjwf"]
-[ext_resource type="Texture2D" uid="uid://jjlk8hmeppqv" path="res://credits/Credits/the_end_def.png" id="6_vdidm"]
+[ext_resource type="Script" path="res://levels/credits/End_Credits.gd" id="1_whf18"]
+[ext_resource type="Texture2D" uid="uid://d1epgmdlfdngl" path="res://levels/credits/Credits/the_end_StarDice_gameoff.png" id="2_jnjwf"]
+[ext_resource type="Texture2D" uid="uid://jjlk8hmeppqv" path="res://levels/credits/Credits/the_end_def.png" id="6_vdidm"]
 
 [sub_resource type="Animation" id="Animation_26meh"]
 length = 0.001
