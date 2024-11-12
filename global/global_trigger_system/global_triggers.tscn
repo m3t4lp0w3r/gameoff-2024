@@ -4,4 +4,4 @@
 
 [node name="GlobalTriggers" type="Node"]
 script = ExtResource("1_nvmwc")
-keys = Array[String](["fade_out", "fade_in"])
+keys = Array[String](["act_1", "act_2", "act_3", "ring"])
