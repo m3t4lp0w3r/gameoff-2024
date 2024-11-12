@@ -19,7 +19,7 @@ character_image = ExtResource("1_53cnf")
 text_name = "Visitor"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xmc1t"]
-size = Vector2(153, 147)
+size = Vector2(230, 228)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ngufx"]
 radius = 197.091
@@ -42,6 +42,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_53cnf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xmc1t")

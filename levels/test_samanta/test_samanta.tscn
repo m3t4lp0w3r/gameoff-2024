@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ek7m3nosnsr8"]
+[gd_scene load_steps=5 format=3 uid="uid://ek7m3nosnsr8"]
 
 [ext_resource type="Script" path="res://levels/test_samanta/scripts/test_samanta.gd" id="1_m77oh"]
+[ext_resource type="PackedScene" uid="uid://cxjpn016wk5vr" path="res://npc_act_1/npc.tscn" id="4_5pj5m"]
 [ext_resource type="PackedScene" uid="uid://cebw0e58m5xj5" path="res://camera/camera.tscn" id="5_bdooc"]
 [ext_resource type="PackedScene" uid="uid://b1124l3cpps2k" path="res://player/player.tscn" id="6_hqks2"]
 
@@ -22,3 +23,11 @@ player_ref = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("6_hqks2")]
 unique_name_in_owner = true
+
+[node name="Npc" parent="." instance=ExtResource("4_5pj5m")]
+position = Vector2(476, 436)
+
+[node name="CollisionShape2D" parent="Npc" index="2"]
+position = Vector2(0, 3)
+
+[editable path="Npc"]

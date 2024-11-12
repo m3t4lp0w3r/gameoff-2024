@@ -1,12 +1,10 @@
 extends CharacterBody2D
 
 @export var dialog : Array[DialogText]
-@export var sprite : Texture2D
 
 @onready var prompt_label = $Label
 
 func _ready() -> void:
-	$Sprite2D.texture = sprite
 	if TriggersSystem.check_trigger("talked", true):
 		hide()
 		
