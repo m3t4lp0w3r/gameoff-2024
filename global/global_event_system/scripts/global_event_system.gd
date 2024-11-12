@@ -11,3 +11,5 @@ signal play_music(audio_key : String)
 #inventory
 signal picked_up_item(item_id : String)
 signal dropped_item(item_id : String)
+signal  transition_fade_in_end
+signal  transition_fade_out_end
