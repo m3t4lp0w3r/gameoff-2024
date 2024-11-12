@@ -6,10 +6,39 @@ extends CharacterBody2D
 @onready var ray_cast = $RayCast2D
 
 var raycast_target : Vector2
+var entered_interactable = null
+var in_cutscene : bool = false
+
+func _ready() -> void:
+	EventSystem.cutscene_started.connect(enter_cutscene)
+	EventSystem.cutscene_finished.connect(exit_cutscene)
+
+func enter_cutscene():
+	in_cutscene = true
+	ray_cast.enabled = false
+	
+	
+func exit_cutscene():
+	in_cutscene = false
+	ray_cast.enabled = true
 
 func _process(delta: float) -> void:
 	
+	if in_cutscene:
+		return
+	
 	ray_cast.target_position = raycast_target
+
+	if ray_cast.is_colliding():
+		var area_collider = ray_cast.get_collider()
+		if area_collider != null and area_collider is Interactable:
+			if entered_interactable == null:
+				area_collider.player_enter_trigger()
+				entered_interactable = area_collider
+	else:
+		if entered_interactable != null:
+			entered_interactable.player_exit_trigger()
+			entered_interactable = null
 	
 	if Input.is_action_just_pressed("interact") :
 		if ray_cast.is_colliding():
@@ -19,9 +48,8 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 
-	## Handle jump.
-	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		#velocity.y = JUMP_VELOCITY
+	if in_cutscene:
+		return
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
