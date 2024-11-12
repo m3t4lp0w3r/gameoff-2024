@@ -73,5 +73,4 @@ func _on_portal_trigger_area_entered(area: Area2D) -> void:
 		var next_link = area.link_id
 		if next_scene != null and next_link != null:
 			GameState.last_player_link_id = next_link
-			LevelSystem.load_level(next_scene)
-	pass # Replace with function body.
+			LevelSystem.call_deferred("load_level", next_scene)
