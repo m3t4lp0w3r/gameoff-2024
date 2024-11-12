@@ -1,10 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://b84wg6i277bjj"]
+[gd_scene load_steps=7 format=3 uid="uid://b84wg6i277bjj"]
 
 [ext_resource type="Script" path="res://global/global_level_system/scripts/level_system.gd" id="1_ud8ko"]
 [ext_resource type="Script" path="res://global/global_level_system/scripts/level_data.gd" id="2_si5r1"]
 [ext_resource type="Resource" uid="uid://dh4fbmqjw5xj5" path="res://levels_data/test_level.tres" id="3_5ipcx"]
 [ext_resource type="Resource" uid="uid://dtb7kx8syqpy7" path="res://levels_data/test_simo.tres" id="4_7g71s"]
+[ext_resource type="Resource" uid="uid://bnsuexr5g8jst" path="res://levels_data/other_level.tres" id="5_jkpbc"]
+[ext_resource type="Resource" uid="uid://b55spphvyr0c2" path="res://levels_data/test_samy.tres" id="6_sh2gr"]
 
 [node name="LevelSystem" type="Node2D"]
 script = ExtResource("1_ud8ko")
-levels_resources = Array[ExtResource("2_si5r1")]([ExtResource("3_5ipcx"), ExtResource("4_7g71s")])
+levels_resources = Array[ExtResource("2_si5r1")]([ExtResource("3_5ipcx"), ExtResource("4_7g71s"), ExtResource("5_jkpbc"), ExtResource("6_sh2gr")])
