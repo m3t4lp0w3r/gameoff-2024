@@ -67,7 +67,7 @@ position = Vector2(414, 335)
 dialog_1 = Array[ExtResource("2_upk1u")]([SubResource("Resource_5jy0i"), SubResource("Resource_x2y3w")])
 dialog_2 = Array[ExtResource("2_upk1u")]([SubResource("Resource_bied4"), SubResource("Resource_7tv5w")])
 dialog_3 = Array[ExtResource("2_upk1u")]([SubResource("Resource_813v0"), SubResource("Resource_kisut")])
-act = "act_3"
+act = "act_1"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-364, 341)
