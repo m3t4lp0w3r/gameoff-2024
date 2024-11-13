@@ -1,19 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1124l3cpps2k"]
+[gd_scene load_steps=5 format=3 uid="uid://b1124l3cpps2k"]
 
-[ext_resource type="Texture2D" uid="uid://ckjcq1uog4sk5" path="res://icon.svg" id="1_jxb4s"]
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_ooyay"]
+[ext_resource type="Texture2D" uid="uid://s5npvo36k6s1" path="res://player/images/minidaemon.png" id="2_g5c41"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bppr6"]
 size = Vector2(128, 128)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlf6t"]
+size = Vector2(103, 103)
+
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 6
+collision_mask = 70
 motion_mode = 1
 script = ExtResource("1_ooyay")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 1)
-texture = ExtResource("1_jxb4s")
+texture = ExtResource("2_g5c41")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -24,3 +29,13 @@ modulate = Color(0.996946, 3.44135e-06, 0, 1)
 target_position = Vector2(0, 100)
 collision_mask = 4
 collide_with_areas = true
+
+[node name="PortalTrigger" type="Area2D" parent="."]
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PortalTrigger"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_rlf6t")
+debug_color = Color(0, 0.6, 0.701961, 0.152941)
+
+[connection signal="area_entered" from="PortalTrigger" to="." method="_on_portal_trigger_area_entered"]

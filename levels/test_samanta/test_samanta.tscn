@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://1dtl451uouxy"]
+[gd_scene load_steps=21 format=3 uid="uid://1dtl451uouxy"]
 
+[ext_resource type="PackedScene" uid="uid://x1in8gvchlxv" path="res://link_system/link_system.tscn" id="1_73o8s"]
 [ext_resource type="Texture2D" uid="uid://ckjcq1uog4sk5" path="res://icon.svg" id="1_ki2qy"]
 [ext_resource type="Script" path="res://inventory/test_item/scripts/item.gd" id="1_s60ta"]
 [ext_resource type="Resource" uid="uid://c8ov4d2wtt551" path="res://dialogue/data/dialog2.tres" id="2_dpptp"]
@@ -13,6 +14,7 @@
 [ext_resource type="Script" path="res://inventory/test_item/scripts/item2.gd" id="4_4bqav"]
 [ext_resource type="Resource" uid="uid://ch5qedq8g1mox" path="res://resource/items/Item2.tres" id="4_lblrq"]
 [ext_resource type="PackedScene" uid="uid://b1124l3cpps2k" path="res://player/player.tscn" id="10_31avi"]
+[ext_resource type="PackedScene" uid="uid://0hi4ih83soya" path="res://link_system/portal.tscn" id="16_ni0sd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_as3mg"]
 size = Vector2(86, 82)
@@ -26,7 +28,15 @@ size = Vector2(94, 101)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h8hj2"]
 size = Vector2(89, 85)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrfr3"]
+
 [node name="TestSamanta" type="Node2D"]
+
+[node name="LinkSystem" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("1_73o8s")]
+player_ref = NodePath("../Player")
+
+[node name="Link1" type="Node2D" parent="LinkSystem"]
+position = Vector2(877, 98)
 
 [node name="Item" type="Node2D" parent="."]
 position = Vector2(300, 177)
@@ -156,6 +166,14 @@ vertical_alignment = 1
 [node name="Player" parent="." instance=ExtResource("10_31avi")]
 unique_name_in_owner = true
 position = Vector2(451, 363)
+
+[node name="Portal" parent="." instance=ExtResource("16_ni0sd")]
+position = Vector2(877, 11)
+level_id = "Test Simon"
+link_id = "SouthEntrance"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
+shape = SubResource("RectangleShape2D_rrfr3")
 
 [connection signal="interacted" from="Item/ItemCollision/Interactable" to="Item" method="_on_interactable_interacted"]
 [connection signal="player_enter" from="Item/ItemCollision/Interactable" to="Item" method="_on_interactable_player_enter"]
