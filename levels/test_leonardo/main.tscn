@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://bf8donm1gea81"]
+
+[ext_resource type="PackedScene" uid="uid://bk1y1hf5aynst" path="res://levels/test_leonardo/enemy_patrol.tscn" id="1_i63co"]
+[ext_resource type="Script" path="res://levels/test_leonardo/PathFollowMovement.gd" id="1_smtxe"]
+
+[sub_resource type="Curve2D" id="Curve2D_nxkba"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 5, 79, 0, 0, 0, 0, 138, 244.975, 0, 0, 0, 0, 271, 358.595, 0, 0, 0, 0, 389, 234.949, 0, 0, 0, 0, 269, 136.924, 0, 0, 0, 0, 701, -12.3418)
+}
+point_count = 6
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dy15m"]
+size = Vector2(41.3405, 40.5085)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4kl2"]
+size = Vector2(40.2234, 39.2527)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4w5su"]
+size = Vector2(42.4423, 39.5301)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylcay"]
+size = Vector2(41.3329, 40.9168)
+
+[node name="MainLevel" type="Node2D"]
+position = Vector2(104, 88)
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-2.00431, 4.07033)
+scale = Vector2(1.40086, 1.30211)
+curve = SubResource("Curve2D_nxkba")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(5, 79)
+rotation = 0.895248
+script = ExtResource("1_smtxe")
+
+[node name="EnemyPatrol" parent="Path2D/PathFollow2D" instance=ExtResource("1_i63co")]
+position = Vector2(-14.4271, -5.1535)
+rotation = -0.895248
+scale = Vector2(1, 1.11392)
+
+[node name="CheckpointLeft" type="Area2D" parent="."]
+position = Vector2(196, 326)
+rotation = 0.982794
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckpointLeft"]
+position = Vector2(3.05085, 0.83205)
+shape = SubResource("RectangleShape2D_dy15m")
+
+[node name="CheckpointRight" type="Area2D" parent="."]
+position = Vector2(538, 313)
+rotation = 0.982794
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckpointRight"]
+position = Vector2(-196.641, 62.4038)
+shape = SubResource("RectangleShape2D_t4kl2")
+
+[node name="CheckpointDown" type="Area2D" parent="."]
+position = Vector2(375, 468)
+rotation = 0.982794
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckpointDown"]
+position = Vector2(-1.94143, 4.71495)
+shape = SubResource("RectangleShape2D_4w5su")
+
+[node name="CheckpointUp" type="Area2D" parent="."]
+position = Vector2(372, 184)
+rotation = 0.982794
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckpointUp"]
+position = Vector2(197.473, -65.4547)
+shape = SubResource("RectangleShape2D_ylcay")
+
+[connection signal="body_entered" from="CheckpointLeft" to="Path2D/PathFollow2D/EnemyPatrol" method="_on_checkpoint_left_body_entered"]
+[connection signal="body_entered" from="CheckpointRight" to="Path2D/PathFollow2D/EnemyPatrol" method="_on_checkpoint_right_body_entered"]
+[connection signal="body_entered" from="CheckpointDown" to="Path2D/PathFollow2D/EnemyPatrol" method="_on_checkpoint_down_body_entered"]
+[connection signal="body_entered" from="CheckpointUp" to="Path2D/PathFollow2D/EnemyPatrol" method="_on_checkpoint_up_body_entered"]

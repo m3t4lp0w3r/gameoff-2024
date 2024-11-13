@@ -1,36 +1,30 @@
 [gd_scene load_steps=4 format=3 uid="uid://bk1y1hf5aynst"]
 
 [ext_resource type="Script" path="res://levels/test_leonardo/EnemyPatrol.gd" id="1_2ckcx"]
-[ext_resource type="Texture2D" uid="uid://ckjcq1uog4sk5" path="res://icon.svg" id="2_ohf4k"]
-
-[sub_resource type="Curve2D" id="Curve2D_hrtnr"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -2, 2, 0, 0, 0, 0, 54, 86, 0, 0, 0, 0, 240, 114, 0, 0, 0, 0, 294, 214, 0, 0, 0, 0, 204, 304, 0, 0, 0, 0, 184, 424, 0, 0, 0, 0, 386, 452, 0, 0, 0, 0, 540, 378, 0, 0, 0, 0, 610, 284, 0, 0, 0, 0, 750, 336, 0, 0, 0, 0, 722, 508, 0, 0, 0, 0, 874, 508, 0, 0, 0, 0, 980, 386, 0, 0, 0, 0, 906, 252, 0, 0, 0, 0, 1080, 160, 0, 0, 0, 0, 968, 84, 0, 0, 0, 0, 772, 80)
-}
-point_count = 17
+[ext_resource type="Texture2D" uid="uid://ckjcq1uog4sk5" path="res://icon.svg" id="2_bu5jb"]
+[ext_resource type="Script" path="res://levels/test_leonardo/FieldOfViewPolygon.gd" id="3_axpf8"]
 
 [node name="EnemyPatrol" type="Node2D"]
 position = Vector2(6, 2)
-
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_hrtnr")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(-2, 2)
-rotation = 0.982794
 script = ExtResource("1_2ckcx")
 
-[node name="Icon" type="Sprite2D" parent="Path2D/PathFollow2D"]
-texture_filter = 1
-position = Vector2(85.1465, -17.7504)
-rotation = -0.982794
-texture = ExtResource("2_ohf4k")
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.703125, 0.679688)
+texture = ExtResource("2_bu5jb")
 
-[node name="FieldOfView" type="Area2D" parent="Path2D/PathFollow2D"]
-position = Vector2(58.2435, -8.04315)
+[node name="FieldOfViewLeft" type="Polygon2D" parent="."]
+color = Color(0.027451, 1, 1, 1)
+script = ExtResource("3_axpf8")
 
-[node name="Polygon2D" type="Polygon2D" parent="Path2D/PathFollow2D/FieldOfView"]
-position = Vector2(-54.3842, -15.3295)
-scale = Vector2(1.08224, 0.775163)
-color = Color(0.109804, 1, 1, 1)
-polygon = PackedVector2Array(73.0599, -7.0589, 171.957, -218.275, 211.397, -121.039, 260.154, -0.832044)
+[node name="FieldOfViewRight" type="Polygon2D" parent="."]
+color = Color(0.027451, 1, 1, 1)
+script = ExtResource("3_axpf8")
+
+[node name="FieldOfViewDown" type="Polygon2D" parent="."]
+color = Color(0.027451, 1, 1, 1)
+script = ExtResource("3_axpf8")
+
+[node name="FieldOfViewUp" type="Polygon2D" parent="."]
+color = Color(0.027451, 1, 1, 1)
+script = ExtResource("3_axpf8")
