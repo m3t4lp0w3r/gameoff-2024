@@ -7,26 +7,21 @@ var fov_left
 var fov_right
 
 func _ready():
-	# Get references to the field of view nodes within EnemyPatrol
 	fov_up = $FieldOfViewUp
 	fov_down = $FieldOfViewDown
 	fov_left = $FieldOfViewLeft
 	fov_right = $FieldOfViewRight
 
-	# Set all field of view nodes to invisible initially
 	fov_up.visible = false
 	fov_down.visible = false
 	fov_left.visible = false
 	fov_right.visible = false
 
-	# Start with initial "right" field of view
 	set_fov("right")
 
 	
 
-# Set the active field of view based on checkpoint hit
 func set_fov(dir: String):
-	# Hide all field of view triangles
 	fov_up.visible = false
 	fov_down.visible = false
 	fov_left.visible = false
