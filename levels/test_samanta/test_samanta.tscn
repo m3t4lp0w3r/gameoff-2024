@@ -1,180 +1,64 @@
-[gd_scene load_steps=21 format=3 uid="uid://1dtl451uouxy"]
+[gd_scene load_steps=10 format=3 uid="uid://ek7m3nosnsr8"]
 
-[ext_resource type="PackedScene" uid="uid://x1in8gvchlxv" path="res://link_system/link_system.tscn" id="1_73o8s"]
-[ext_resource type="Texture2D" uid="uid://ckjcq1uog4sk5" path="res://icon.svg" id="1_ki2qy"]
-[ext_resource type="Script" path="res://inventory/test_item/scripts/item.gd" id="1_s60ta"]
-[ext_resource type="Resource" uid="uid://c8ov4d2wtt551" path="res://dialogue/data/dialog2.tres" id="2_dpptp"]
-[ext_resource type="Resource" uid="uid://ddxepx7m1r5b0" path="res://resource/items/Item1.tres" id="2_r0oxu"]
-[ext_resource type="Texture2D" uid="uid://x01qfcfa3ev7" path="res://credits/Credits/Simone.png" id="2_sx5e7"]
-[ext_resource type="Script" path="res://dialogue/data/dialog_data.gd" id="2_upk1u"]
-[ext_resource type="Texture2D" uid="uid://cxx06vetlfmqp" path="res://splash_screen/STAR dice white.png" id="3_o8ktu"]
-[ext_resource type="PackedScene" uid="uid://bp55k82sv4ufj" path="res://interactable/interactable.tscn" id="3_rlbab"]
-[ext_resource type="Resource" uid="uid://bdvot23febb1r" path="res://dialogue/data/dialog1.tres" id="3_rtj61"]
-[ext_resource type="Script" path="res://inventory/test_drop/scripts/drop.gd" id="3_yhbhj"]
-[ext_resource type="Script" path="res://inventory/test_item/scripts/item2.gd" id="4_4bqav"]
-[ext_resource type="Resource" uid="uid://ch5qedq8g1mox" path="res://resource/items/Item2.tres" id="4_lblrq"]
-[ext_resource type="PackedScene" uid="uid://b1124l3cpps2k" path="res://player/player.tscn" id="10_31avi"]
-[ext_resource type="PackedScene" uid="uid://0hi4ih83soya" path="res://link_system/portal.tscn" id="16_ni0sd"]
+[ext_resource type="Script" path="res://levels/test_samanta/scripts/test_samanta.gd" id="1_m77oh"]
+[ext_resource type="PackedScene" uid="uid://cxjpn016wk5vr" path="res://npc_act_1/npc.tscn" id="4_5pj5m"]
+[ext_resource type="PackedScene" uid="uid://cebw0e58m5xj5" path="res://camera/camera.tscn" id="5_bdooc"]
+[ext_resource type="Script" path="res://dialogue/data/dialog_data.gd" id="5_dxutt"]
+[ext_resource type="Texture2D" uid="uid://xcwf5re384c8" path="res://credits/Credits/Mattia.png" id="5_puhyt"]
+[ext_resource type="Resource" uid="uid://ckdw6l61shpjf" path="res://npc_act_1/data/npc2_player.tres" id="6_be38s"]
+[ext_resource type="PackedScene" uid="uid://b1124l3cpps2k" path="res://player/player.tscn" id="6_hqks2"]
+[ext_resource type="Resource" uid="uid://bfq1ve21ohvwq" path="res://npc_act_1/data/npc2_resp.tres" id="7_iyyhc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_as3mg"]
-size = Vector2(86, 82)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5k3p"]
-size = Vector2(79, 1655.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gicm0"]
-size = Vector2(94, 101)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h8hj2"]
-size = Vector2(89, 85)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrfr3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fd28s"]
+size = Vector2(197, 152)
 
 [node name="TestSamanta" type="Node2D"]
-
-[node name="LinkSystem" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("1_73o8s")]
-player_ref = NodePath("../Player")
-
-[node name="Link1" type="Node2D" parent="LinkSystem"]
-position = Vector2(877, 98)
-
-[node name="Item" type="Node2D" parent="."]
-position = Vector2(300, 177)
-script = ExtResource("1_s60ta")
-dialog = Array[ExtResource("2_upk1u")]([ExtResource("3_rtj61"), ExtResource("2_dpptp")])
-
-[node name="Label" type="Label" parent="Item"]
-visible = false
-offset_left = -73.0
-offset_top = -63.0
-offset_right = 50.0
-offset_bottom = -36.0
-text = "Press E"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="ItemCollision" type="StaticBody2D" parent="Item"]
-collision_layer = 2
-
-[node name="MouseSprite" type="Sprite2D" parent="Item/ItemCollision"]
-scale = Vector2(0.376, 0.376)
-texture = ExtResource("2_sx5e7")
-
-[node name="Interactable" parent="Item/ItemCollision" instance=ExtResource("3_rlbab")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Item/ItemCollision/Interactable"]
-position = Vector2(-5, 3)
-shape = SubResource("RectangleShape2D_as3mg")
-
-[node name="StaticBody2D#CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-79, -359)
-shape = SubResource("RectangleShape2D_w5k3p")
-debug_color = Color(0.787039, 0.275809, 0.826464, 0.42)
-
-[node name="Item2" type="Node2D" parent="."]
-position = Vector2(756, 314)
-script = ExtResource("4_4bqav")
-item_data = ExtResource("4_lblrq")
-
-[node name="Label" type="Label" parent="Item2"]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -42.0
-offset_top = -16.0
-offset_right = 42.0
-offset_bottom = 16.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Press E"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Item2Collision" type="StaticBody2D" parent="Item2"]
-position = Vector2(-1, 44)
-collision_mask = 19
-
-[node name="StarDiceSprite" type="Sprite2D" parent="Item2/Item2Collision"]
-scale = Vector2(0.215, 0.215)
-texture = ExtResource("3_o8ktu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Item2/Item2Collision"]
-position = Vector2(-1, -3.5)
-shape = SubResource("RectangleShape2D_gicm0")
-
-[node name="Drop" type="Node2D" parent="."]
-position = Vector2(193, 325)
-script = ExtResource("3_yhbhj")
-item_data = ExtResource("2_r0oxu")
-
-[node name="Label3" type="Label" parent="Drop"]
-visible = false
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -33.0
-offset_top = -28.0
-offset_right = 134.0
-offset_bottom = 59.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 30
-text = "PRESS E"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="StarDiceSprite" type="Sprite2D" parent="Drop"]
-visible = false
-position = Vector2(37, 28)
-scale = Vector2(0.376, 0.376)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Drop"]
-position = Vector2(48, 115)
-
-[node name="Sprite2D" type="Sprite2D" parent="Drop/StaticBody2D"]
-position = Vector2(-20, 21)
-scale = Vector2(0.6875, 0.671875)
-texture = ExtResource("1_ki2qy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop/StaticBody2D"]
-position = Vector2(-20.5, 21.5)
-shape = SubResource("RectangleShape2D_h8hj2")
-
-[node name="Label2" type="Label" parent="Drop"]
-visible = false
-offset_left = 109.0
-offset_top = 53.0
-offset_right = 237.0
-offset_bottom = 110.0
-text = "Item not found"
-horizontal_alignment = 1
-vertical_alignment = 1
+script = ExtResource("1_m77oh")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 226.0
-offset_top = 235.0
-offset_right = 514.0
-offset_bottom = 322.0
-theme_override_font_sizes/font_size = 40
-text = "FADE OUT"
+offset_left = 1382.0
+offset_top = 68.0
+offset_right = 1910.0
+offset_bottom = 169.0
+theme_override_font_sizes/font_size = 50
+text = "EXIT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Player" parent="." instance=ExtResource("10_31avi")]
+[node name="CameraFollow" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("5_bdooc")]
+player_ref = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource("6_hqks2")]
 unique_name_in_owner = true
-position = Vector2(451, 363)
 
-[node name="Portal" parent="." instance=ExtResource("16_ni0sd")]
-position = Vector2(877, 11)
-level_id = "Test Simon"
-link_id = "SouthEntrance"
+[node name="Npc" parent="." instance=ExtResource("4_5pj5m")]
+position = Vector2(476, 436)
+trigger_id = "talked"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
-shape = SubResource("RectangleShape2D_rrfr3")
+[node name="CollisionShape2D" parent="Npc" index="2"]
+position = Vector2(0, 3)
 
-[connection signal="interacted" from="Item/ItemCollision/Interactable" to="Item" method="_on_interactable_interacted"]
-[connection signal="player_enter" from="Item/ItemCollision/Interactable" to="Item" method="_on_interactable_player_enter"]
-[connection signal="player_exit" from="Item/ItemCollision/Interactable" to="Item" method="_on_interactable_player_exit"]
+[node name="Npc2" parent="." instance=ExtResource("4_5pj5m")]
+position = Vector2(1386, 564)
+dialog = Array[ExtResource("5_dxutt")]([ExtResource("6_be38s"), ExtResource("7_iyyhc")])
+trigger_id = "npc_mattia_talked"
+
+[node name="Sprite2D" parent="Npc2" index="1"]
+texture = ExtResource("5_puhyt")
+
+[node name="CollisionShape2D" parent="Npc2" index="2"]
+position = Vector2(0, 3)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1612, 102)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(26.5, 26)
+shape = SubResource("RectangleShape2D_fd28s")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+
+[editable path="Npc"]
+[editable path="Npc2"]
