@@ -27,7 +27,7 @@ func _on_exit_pressed():
 
 
 func _on_new_game_pressed() -> void:
-	LevelSystem.load_level("first day cutscene", true)
+	LevelSystem.load_level("intro cutscene", true)
 	EventSystem.show_hud.emit()
 
 func _on_load_game_pressed():

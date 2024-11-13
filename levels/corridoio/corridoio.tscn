@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://bqkf3k4ab5ac4"]
+[gd_scene load_steps=2 format=3 uid="uid://bqkf3k4ab5ac4"]
+
+[ext_resource type="PackedScene" uid="uid://cebw0e58m5xj5" path="res://camera/camera.tscn" id="1_un85s"]
 
 [node name="Corridoio" type="Node2D"]
+
+[node name="CameraFollow" parent="." instance=ExtResource("1_un85s")]
+position = Vector2(941, 542)
