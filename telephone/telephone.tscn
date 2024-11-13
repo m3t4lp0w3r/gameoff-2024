@@ -48,8 +48,7 @@ stream = ExtResource("4_1ytcf")
 stream = ExtResource("5_dlb18")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.5
-autostart = true
+wait_time = 0.5
 
 [connection signal="interacted" from="StaticBody2D/Interactable" to="." method="_on_interactable_interacted"]
 [connection signal="player_enter" from="StaticBody2D/Interactable" to="." method="_on_interactable_player_enter"]

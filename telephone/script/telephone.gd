@@ -15,7 +15,7 @@ extends Node2D
 func _ready() -> void:
 	if TriggersSystem.check_trigger("ring", true):
 		ring_sound.play()
-		
+	$Timer.start()
 
 func _on_interactable_player_enter() -> void:
 	if TriggersSystem.check_trigger("ring", true):
@@ -50,6 +50,7 @@ func start_dialog():
 
 func _on_timer_timeout() -> void:
 	if TriggersSystem.check_trigger("ring", true):
+		$Timer.wait_time = 3.0
 		ring_sound.play()
 		$Timer.start()
 	else:
