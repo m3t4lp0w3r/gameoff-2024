@@ -8,6 +8,9 @@ extends Node2D
 func _physics_process(delta: float) -> void:
 	
 	if player_ref == null:
+		player_ref = %Player
+	
+	if player_ref == null:
 		printerr("Missing player ref for camera")
 		return
 	
