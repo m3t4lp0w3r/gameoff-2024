@@ -16,3 +16,5 @@ func item_picked_up(item_id : String):
 func update_counter_talk(key: String, value : bool) -> void:
 	if key == "talk1" and value == true:
 		EventSystem.task_update.emit("test_counter")
+	if key == "trigger_from_dialog" and value == true:
+		print_debug("Trigger is true from dialog")
