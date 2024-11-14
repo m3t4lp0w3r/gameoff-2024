@@ -14,6 +14,11 @@ func _ready() -> void:
 		links[child.name] = child.position
 	
 	var last_link : String = GameState.last_player_link_id
+	
+	#manage the player by unique name
+	if player_ref == null:
+		player_ref = %Player
+	
 	if last_link != null and player_ref != null:
 		if links.has(last_link):
 			var link_pos = links[last_link]
@@ -21,6 +26,8 @@ func _ready() -> void:
 				player_ref.global_position = link_pos
 				if player_ref.has_method("change_player_sprite"):
 					player_ref.direction = GameState.last_player_dir
+	else:
+		printerr("Player ref missing")
 
 #func get_link_by_id(id : String) -> SceneLink:
 	#for link in links:

@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://ce2sb814fdfw0"]
+
+[ext_resource type="PackedScene" uid="uid://x1in8gvchlxv" path="res://link_system/link_system.tscn" id="1_i1wci"]
+[ext_resource type="PackedScene" uid="uid://cebw0e58m5xj5" path="res://camera/camera.tscn" id="1_ia8ci"]
+[ext_resource type="PackedScene" uid="uid://b1124l3cpps2k" path="res://player/player.tscn" id="2_cc2si"]
+[ext_resource type="PackedScene" uid="uid://0hi4ih83soya" path="res://link_system/portal.tscn" id="4_cd7wf"]
+
+[node name="SalaArte" type="Node2D"]
+
+[node name="LinkSystem" parent="." instance=ExtResource("1_i1wci")]
+
+[node name="South" type="Node2D" parent="LinkSystem"]
+position = Vector2(282, 930)
+
+[node name="ColorRect" type="ColorRect" parent="LinkSystem/South"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CameraFollow" parent="." instance=ExtResource("1_ia8ci")]
+position = Vector2(951, 556)
+
+[node name="Player" parent="." instance=ExtResource("2_cc2si")]
+unique_name_in_owner = true
+position = Vector2(944, 549)
+
+[node name="Portal" parent="." instance=ExtResource("4_cd7wf")]
+position = Vector2(299, 1090)
+level_id = "corridoio"
+link_id = "North2"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 432.0
+offset_top = 273.0
+offset_right = 703.0
+offset_bottom = 356.0
+theme_override_font_sizes/font_size = 60
+text = "Sala Arte
+"

@@ -5,7 +5,9 @@ var items_array : Array[ItemData] = []
 @onready var inventory_slot = $CanvasLayer/Control/Panel/HBoxContainer
 
 func _ready() -> void:
-	#EventSystem.hide_hud.connect(hide_inventory)
+	#hide_inventory()
+	EventSystem.hide_hud.connect(hide_inventory)
+	EventSystem.show_hud.connect(show_inventory)
 	EventSystem.cutscene_started.connect(hide_inventory)
 	EventSystem.cutscene_finished.connect(show_inventory)
 

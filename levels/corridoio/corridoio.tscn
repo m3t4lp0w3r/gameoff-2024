@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqkf3k4ab5ac4"]
+
+[ext_resource type="PackedScene" uid="uid://x1in8gvchlxv" path="res://link_system/link_system.tscn" id="1_fksk1"]
+[ext_resource type="PackedScene" uid="uid://cebw0e58m5xj5" path="res://camera/camera.tscn" id="1_un85s"]
+[ext_resource type="PackedScene" uid="uid://b1124l3cpps2k" path="res://player/player.tscn" id="2_qa672"]
+[ext_resource type="PackedScene" uid="uid://0hi4ih83soya" path="res://link_system/portal.tscn" id="4_mxoqe"]
+
+[node name="Corridoio" type="Node2D"]
+
+[node name="LinkSystem" parent="." instance=ExtResource("1_fksk1")]
+
+[node name="EastDoor" type="Node2D" parent="LinkSystem"]
+position = Vector2(1711, 569)
+
+[node name="ColorRect" type="ColorRect" parent="LinkSystem/EastDoor"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WestDoor" type="Node2D" parent="LinkSystem"]
+position = Vector2(99, 551)
+
+[node name="ColorRect" type="ColorRect" parent="LinkSystem/WestDoor"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="North1" type="Node2D" parent="LinkSystem"]
+position = Vector2(378, 60)
+
+[node name="ColorRect" type="ColorRect" parent="LinkSystem/North1"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="North2" type="Node2D" parent="LinkSystem"]
+position = Vector2(1510, 78)
+
+[node name="ColorRect" type="ColorRect" parent="LinkSystem/North2"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CameraFollow" parent="." instance=ExtResource("1_un85s")]
+position = Vector2(941, 542)
+
+[node name="Player" parent="." instance=ExtResource("2_qa672")]
+unique_name_in_owner = true
+position = Vector2(912, 535)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 432.0
+offset_top = 273.0
+offset_right = 703.0
+offset_bottom = 356.0
+theme_override_font_sizes/font_size = 60
+text = "Corridoio"
+
+[node name="Ingresso" parent="." instance=ExtResource("4_mxoqe")]
+position = Vector2(1864, 566)
+level_id = "ingresso"
+link_id = "WestDoor"
+
+[node name="SalaArte" parent="." instance=ExtResource("4_mxoqe")]
+position = Vector2(1510, -36)
+level_id = "sala arte"
+link_id = "South"
+
+[node name="SalaPreistorica" parent="." instance=ExtResource("4_mxoqe")]
+position = Vector2(390, -40)
+level_id = "sala preistorica"
+link_id = "South"
+
+[node name="SalaSacrificio" parent="." instance=ExtResource("4_mxoqe")]
+position = Vector2(-18, 572)
+level_id = "sala sacrificio"
+link_id = "East"
