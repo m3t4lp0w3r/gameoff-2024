@@ -1,6 +1,7 @@
 extends Node2D
 
 signal task_completed(task_id : String)
+signal task_update(task_id : String)
 signal all_task_completed()
 
 #TOOO this should be moved insiede the audio system
@@ -22,3 +23,6 @@ signal hide_hud()
 
 signal cutscene_started()
 signal cutscene_finished()
+
+#Triggers
+signal trigger_changed(task_id : String, value : bool)
