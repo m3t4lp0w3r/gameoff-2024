@@ -14,11 +14,12 @@ animation = &"walk_left"
 
 [resource]
 blend_point_0/node = SubResource("AnimationNodeAnimation_egdco")
-blend_point_0/pos = Vector2(0, 0.6)
+blend_point_0/pos = Vector2(0, 0.2)
 blend_point_1/node = SubResource("AnimationNodeAnimation_rheic")
 blend_point_1/pos = Vector2(0.1, 0)
 blend_point_2/node = SubResource("AnimationNodeAnimation_dllgo")
-blend_point_2/pos = Vector2(0, -0.6)
+blend_point_2/pos = Vector2(0, -0.2)
 blend_point_3/node = SubResource("AnimationNodeAnimation_ksb7b")
 blend_point_3/pos = Vector2(-0.1, 0)
+max_space = Vector2(1, 1.01)
 blend_mode = 1

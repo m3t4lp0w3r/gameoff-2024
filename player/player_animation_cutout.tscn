@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://bsi32wu6qmige"]
+[gd_scene load_steps=54 format=3 uid="uid://bsi32wu6qmige"]
 
 [ext_resource type="AudioStream" uid="uid://bc1sy55rghayb" path="res://audio/sfx/footstep/Footsteps_06.wav" id="1_8x1ip"]
 [ext_resource type="Texture2D" uid="uid://07qdwydj7ijn" path="res://resource/assets/protagonista/fronte/Torso.png" id="1_ca6el"]
@@ -794,10 +794,10 @@ tracks/0/path = NodePath("Front/root_front/Bacino/remote_leg_l:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.130061, 0.130061, 0.130061]
+"values": [0.130061, 0.130061, 0.130061, 0.130061, 0.130061]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -806,10 +806,10 @@ tracks/1/path = NodePath("Front/root_front/Bacino/remote_leg_l/remote_leg_l2:rot
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [-0.36482, 0.2845, -0.36482]
+"values": [-0.36482, 0.2845, -0.36482, 0.2845, -0.36482]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -818,10 +818,10 @@ tracks/2/path = NodePath("Front/root_front/Bacino/remote_leg_l/remote_leg_l2/rem
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [-0.0767857, -0.0767857, -0.0767857]
+"values": [-0.0767857, -0.0767857, -0.0767857, -0.0767857, -0.0767857]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -830,10 +830,10 @@ tracks/3/path = NodePath("Front/root_front/Bacino/remote_leg_r:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0.8, 0.8), Vector2(1, 1), Vector2(0.8, 0.8)]
+"values": [Vector2(0.8, 0.8), Vector2(1, 1), Vector2(0.8, 0.8), Vector2(1, 1), Vector2(0.8, 0.8)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -842,10 +842,10 @@ tracks/4/path = NodePath("Front/root_front/Bacino/remote_leg_r:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [-0.286, -0.128673, -0.286]
+"values": [-0.286, -0.128673, -0.286, -0.128673, -0.286]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -854,10 +854,10 @@ tracks/5/path = NodePath("Front/root_front/Bacino/remote_leg_r/remote_leg_r:rota
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.402487, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [-0.196661, 0.463451, -0.196661]
+"values": [-0.196661, 0.463451, -0.196661, 0.463451, -0.196661]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -866,10 +866,10 @@ tracks/6/path = NodePath("Front/root_front/Bacino/remote_leg_r/remote_leg_r/remo
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.402487, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [-6.6125, -6.43072, -6.6125]
+"values": [-6.6125, -6.43072, -6.6125, -6.43072, -6.6125]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -878,10 +878,10 @@ tracks/7/path = NodePath("Front/root_front/Bacino/remote_leg_l:scale")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(0.8, 0.8), Vector2(1, 1)]
+"values": [Vector2(1, 1), Vector2(0.8, 0.8), Vector2(1, 1), Vector2(0.8, 0.8), Vector2(1, 1)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -890,10 +890,10 @@ tracks/8/path = NodePath("Front/root_front/Bacino/remote_leg_r:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-24, -18), Vector2(-20, 2), Vector2(-24, -18)]
+"values": [Vector2(-24, -18), Vector2(-20, 2), Vector2(-24, -18), Vector2(-20, 2), Vector2(-24, -18)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -902,10 +902,10 @@ tracks/9/path = NodePath("Front/root_front/Bacino/remote_leg_l:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(27, -4), Vector2(22, -19), Vector2(27, -4)]
+"values": [Vector2(27, -4), Vector2(22, -19), Vector2(27, -4), Vector2(22, -19), Vector2(27, -4)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -914,10 +914,10 @@ tracks/10/path = NodePath("Front/root_front/Bacino/remote_arm_l:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.402487, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [-0.0192162, 0.289641]
+"values": [-0.0192162, 0.289641, -0.0192162, 0.289641]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
@@ -926,10 +926,10 @@ tracks/11/path = NodePath("Front/root_front/Bacino/remote_arm_l/remote_hand_l:ro
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.402487, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [-0.34383, 1.24991]
+"values": [-0.34383, 1.24991, -0.34383, 1.24991]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
@@ -938,10 +938,10 @@ tracks/12/path = NodePath("Front/root_front/Bacino/BraccioDx:z_index")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.402487, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [-1, 0]
+"values": [-1, 0, -1, 0]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
@@ -950,10 +950,10 @@ tracks/13/path = NodePath("Front/root_front/Bacino/remote_arm_r:rotation")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.402487, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [-0.437842, -0.0249477]
+"values": [-0.437842, -0.0249477, -0.437842, -0.0249477]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
@@ -962,10 +962,10 @@ tracks/14/path = NodePath("Front/root_front/Bacino/remote_arm_r/remote_hand_r:ro
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.402487, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [-0.885369, -0.177235]
+"values": [-0.885369, -0.177235, -0.885369, -0.177235]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
@@ -974,10 +974,10 @@ tracks/15/path = NodePath("Front/root_front/Bacino/BraccioSx:z_index")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.402487, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, -1, 0]
+"values": [0, -1, 0, -1, 0]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
@@ -1010,10 +1010,10 @@ tracks/18/path = NodePath("Front/root_front/Bacino/remote_head:rotation")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.402487, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.165806, -0.16057, 0.165806]
+"values": [0.165806, -0.16057, 0.165806, -0.16057, 0.165806]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
@@ -1022,10 +1022,10 @@ tracks/19/path = NodePath("Front:scale")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.402487, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(0.925, 0.925), Vector2(1, 1)]
+"values": [Vector2(1, 1), Vector2(0.925, 0.925), Vector2(1, 1), Vector2(0.925, 0.925), Vector2(1, 1)]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
@@ -1034,10 +1034,10 @@ tracks/20/path = NodePath("Front/root_front/Torso:position")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.402487, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(10, -60), Vector2(10.39, -65), Vector2(10, -60), Vector2(10.39, -65), Vector2(10, -60)]
+"values": [Vector2(10, -60), Vector2(10.39, -65), Vector2(10, -60), Vector2(10, -60), Vector2(10, -60), Vector2(10, -60)]
 }
 tracks/21/type = "value"
 tracks/21/imported = false
@@ -1046,10 +1046,10 @@ tracks/21/path = NodePath("Front/root_front/Bacino/remote_arm_l:scale")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.402487, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0.8, 0.8), Vector2(1, 1)]
+"values": [Vector2(0.8, 0.8), Vector2(1, 1), Vector2(0.8, 0.8), Vector2(1, 1)]
 }
 tracks/22/type = "value"
 tracks/22/imported = false
@@ -1613,10 +1613,10 @@ tracks/0/path = NodePath("Back/root_back/Bacino/remote_leg_l:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(17.3873, -25.7108), Vector2(19.4328, -14.4602), Vector2(17.3873, -25.7108)]
+"values": [Vector2(17.3873, -25.7108), Vector2(19.4328, -14.4602), Vector2(17.3873, -25.7108), Vector2(19.4328, -14.4602), Vector2(17.3873, -25.7108)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1625,10 +1625,10 @@ tracks/1/path = NodePath("Back/root_back/Bacino/remote_leg_l:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.00714745, 0.00714745, 0.00714745]
+"values": [0.00714745, 0.00714745, 0.00714745, 0.00714745, 0.00714745]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1637,10 +1637,10 @@ tracks/2/path = NodePath("Back/root_back/Bacino/remote_leg_l:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0.8, 0.8), Vector2(1, 1), Vector2(0.8, 0.8)]
+"values": [Vector2(0.8, 0.8), Vector2(1, 1), Vector2(0.8, 0.8), Vector2(1, 1), Vector2(0.8, 0.8)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1649,10 +1649,10 @@ tracks/3/path = NodePath("Back/root_back/Bacino/remote_leg_l/remote_leg_l2:rotat
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [-0.171993, 0.254995, -0.171993]
+"values": [-0.171993, 0.254995, -0.171993, 0.254995, -0.171993]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1661,10 +1661,10 @@ tracks/4/path = NodePath("Back/root_back/Bacino/remote_leg_l/remote_leg_l2/remot
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [-0.078529, 0.113077, -0.078529]
+"values": [-0.078529, 0.113077, -0.078529, 0.113077, -0.078529]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1673,10 +1673,10 @@ tracks/5/path = NodePath("Back/root_back/Bacino/remote_leg_r:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-19.4328, 3.94981), Vector2(-15.3417, -6.27799), Vector2(-19.4328, 3.94981)]
+"values": [Vector2(-19.4328, 3.94981), Vector2(-15.3417, -6.27799), Vector2(-19.4328, 3.94981), Vector2(-15.3417, -6.27799), Vector2(-19.4328, 3.94981)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -1685,10 +1685,10 @@ tracks/6/path = NodePath("Back/root_back/Bacino/remote_leg_r:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [-0.058863, -0.058863, -0.058863]
+"values": [-0.058863, -0.058863, -0.058863, -0.058863, -0.058863]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -1697,10 +1697,10 @@ tracks/7/path = NodePath("Back/root_back/Bacino/remote_leg_r:scale")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.803269, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(0.8, 0.8), Vector2(1, 1)]
+"values": [Vector2(1, 1), Vector2(0.8, 0.8), Vector2(1, 1), Vector2(0.8, 0.8), Vector2(1, 1)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -1709,10 +1709,10 @@ tracks/8/path = NodePath("Back/root_back/Bacino/remote_leg_r/remote_leg_r:rotati
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.803269, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [-0.175837, -0.175837, -0.175837]
+"values": [-0.175837, -0.175837, -0.175837, -0.175837, -0.175837]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -1721,10 +1721,10 @@ tracks/9/path = NodePath("Back/root_back/Bacino/remote_leg_r/remote_leg_r/remote
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.803269, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [-6.4337, -6.07193, -6.4337]
+"values": [-6.4337, -6.07193, -6.4337, -6.07193, -6.4337]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -1733,10 +1733,10 @@ tracks/10/path = NodePath("Back/root_back/Bacino/remote_arm_r:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [-0.0202938, -0.549488]
+"values": [-0.0202938, -0.549488, -0.0202938, -0.549488]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
@@ -1745,10 +1745,10 @@ tracks/11/path = NodePath("Back/root_back/Bacino/remote_arm_r/remote_hand_r:rota
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-0.189792]
+"values": [-0.189792, -0.189792]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
@@ -1757,10 +1757,10 @@ tracks/12/path = NodePath("Back/root_back/Bacino/remote_arm_l:rotation")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.396731, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.516617, -0.185178]
+"values": [0.516617, -0.185178, 0.516617, -0.185178]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
@@ -1769,10 +1769,10 @@ tracks/13/path = NodePath("Back/root_back/Bacino/BraccioDx/ManoDx:z_index")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0, 1.6),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.8, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [-2, -2]
+"values": [-2, -2, -2]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
@@ -1781,10 +1781,10 @@ tracks/14/path = NodePath("Back/root_back/Bacino/remote_arm_l/remote_hand_l:rota
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0.8),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.4, 1.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-0.331504]
+"values": [-0.331504, -0.331504]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
@@ -1793,10 +1793,10 @@ tracks/15/path = NodePath("Back/root_back/Bacino/BraccioSx/ManoSx:z_index")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(0.8),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.4, 1.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [-3]
+"values": [-3, -3]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
@@ -1805,10 +1805,10 @@ tracks/16/path = NodePath("Back/root_back/remote_head:rotation")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [-0.128728, 0.118168, -0.128728]
+"values": [-0.128728, 0.118168, -0.128728, 0.118168, -0.128728]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
@@ -1817,10 +1817,10 @@ tracks/17/path = NodePath("Back:scale")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(0.925, 0.925), Vector2(1, 1)]
+"values": [Vector2(1, 1), Vector2(0.925, 0.925), Vector2(1, 1), Vector2(0.925, 0.925), Vector2(1, 1)]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
@@ -1829,10 +1829,10 @@ tracks/18/path = NodePath("Back/root_back/Torso:position")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.396731, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(10.232, -60), Vector2(10.232, -65), Vector2(10.232, -60), Vector2(10.232, -65), Vector2(10.232, -60)]
+"values": [Vector2(10.232, -60), Vector2(10.232, -60), Vector2(10.232, -65), Vector2(10.232, -60), Vector2(10.232, -60), Vector2(10.232, -60)]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
@@ -1903,14 +1903,6 @@ _data = {
 "walk_right": SubResource("Animation_otgft"),
 "walk_up": SubResource("Animation_pnf5r")
 }
-
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_xlhl7"]
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4xbb0"]
-states/Idle/node = SubResource("AnimationNodeBlendSpace2D_xlhl7")
-states/Idle/position = Vector2(1131, 241)
-states/Walk/node = ExtResource("47_ypqem")
-states/Walk/position = Vector2(1131, 171)
 
 [node name="Player_animation" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [96.0, 80.0]
@@ -2332,7 +2324,7 @@ region_rect = Rect2(187, 250, 119, 162)
 [node name="Testa" type="Sprite2D" parent="Back/root_back"]
 z_index = 1
 position = Vector2(-4.09112, -130.034)
-rotation = -0.128728
+rotation = 0.109122
 scale = Vector2(1, 1)
 texture = ExtResource("20_fw7m0")
 offset = Vector2(10.8645, -12.0937)
@@ -2350,9 +2342,9 @@ region_rect = Rect2(205, 384, 79, 29)
 
 [node name="GambaDx1" type="Sprite2D" parent="Back/root_back/Bacino"]
 z_index = -1
-position = Vector2(17.3873, -25.7108)
+position = Vector2(19.3579, -14.8724)
 rotation = 0.00714745
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.992673, 0.992673)
 texture = ExtResource("21_x1epe")
 offset = Vector2(6, 21)
 region_enabled = true
@@ -2360,9 +2352,9 @@ region_rect = Rect2(251.091, 376.637, 39.0917, 63.6348)
 
 [node name="GambaDx2" type="Sprite2D" parent="Back/root_back/Bacino/GambaDx1"]
 z_index = 1
-position = Vector2(7.53209, 52.1093)
-rotation = -0.171993
-scale = Vector2(1, 1)
+position = Vector2(7.44872, 51.6122)
+rotation = 0.239352
+scale = Vector2(0.995409, 0.995409)
 texture = ExtResource("22_ixdx8")
 offset = Vector2(-1, 16)
 region_enabled = true
@@ -2370,9 +2362,9 @@ region_rect = Rect2(249.091, 427.349, 41.8416, 48.0333)
 
 [node name="PiedeDx" type="Sprite2D" parent="Back/root_back/Bacino/GambaDx1"]
 z_index = -1
-position = Vector2(13.9537, 91.9528)
-rotation = -0.250522
-scale = Vector2(1, 1)
+position = Vector2(-2.55034, 90.5203)
+rotation = 0.345409
+scale = Vector2(0.995409, 0.995409)
 texture = ExtResource("23_qppor")
 offset = Vector2(13, 11)
 region_enabled = true
@@ -2395,8 +2387,9 @@ rotation = -0.078529
 remote_path = NodePath("../../../GambaDx1/PiedeDx")
 
 [node name="GambaSx1" type="Sprite2D" parent="Back/root_back/Bacino"]
-position = Vector2(-17.3873, -3.20965)
+position = Vector2(-15.4916, -5.90328)
 rotation = -0.058863
+scale = Vector2(0.807327, 0.807327)
 texture = ExtResource("24_hqhr8")
 offset = Vector2(-2, 22)
 region_enabled = true
@@ -2404,8 +2397,9 @@ region_rect = Rect2(200, 377, 44, 66)
 
 [node name="GambaSx2" type="Sprite2D" parent="Back/root_back/Bacino/GambaSx1"]
 z_index = -1
-position = Vector2(-5.39019, 38.6867)
+position = Vector2(-5.55454, 39.1916)
 rotation = -0.175837
+scale = Vector2(1.0057, 1.0057)
 texture = ExtResource("25_au31p")
 offset = Vector2(3, 16)
 region_enabled = true
@@ -2413,8 +2407,9 @@ region_rect = Rect2(199, 422, 46, 49)
 
 [node name="PiedeSx" type="Sprite2D" parent="Back/root_back/Bacino/GambaSx1"]
 z_index = -2
-position = Vector2(9.37314, 73.1273)
-rotation = -0.504648
+position = Vector2(9.29299, 73.8287)
+rotation = 0.0221665
+scale = Vector2(1.0057, 1.0057)
 texture = ExtResource("26_41krq")
 offset = Vector2(-16, 13)
 region_enabled = true
@@ -2437,7 +2432,7 @@ remote_path = NodePath("../../../GambaSx1/PiedeSx")
 
 [node name="BraccioSx" type="Sprite2D" parent="Back/root_back/Bacino"]
 position = Vector2(-37, -101)
-rotation = -0.0202938
+rotation = -0.5301
 texture = ExtResource("29_45nha")
 offset = Vector2(-20, 29)
 region_enabled = true
@@ -2445,8 +2440,8 @@ region_rect = Rect2(157, 274, 64, 92)
 
 [node name="ManoSx" type="Sprite2D" parent="Back/root_back/Bacino/BraccioSx"]
 z_index = -3
-position = Vector2(-38.9339, 62.2386)
-rotation = -0.189792
+position = Vector2(-39.685, 61.7624)
+rotation = -0.177678
 texture = ExtResource("30_e5bim")
 offset = Vector2(3.46396, 31.8486)
 region_enabled = true
@@ -2464,7 +2459,7 @@ remote_path = NodePath("../../BraccioSx/ManoSx")
 
 [node name="BraccioDx" type="Sprite2D" parent="Back/root_back/Bacino"]
 position = Vector2(39, -102)
-rotation = 0.516617
+rotation = -0.153986
 scale = Vector2(0.859393, 0.859393)
 texture = ExtResource("27_krcmu")
 offset = Vector2(24, 33)
@@ -2472,8 +2467,8 @@ region_enabled = true
 region_rect = Rect2(250, 268, 87, 101)
 
 [node name="ManoDx" type="Sprite2D" parent="Back/root_back/Bacino/BraccioDx"]
-position = Vector2(42.7813, 63.8338)
-rotation = -0.331504
+position = Vector2(41.7588, 64.5074)
+rotation = -0.31557
 scale = Vector2(1, 1)
 texture = ExtResource("28_xp2q8")
 offset = Vector2(-6, 34)
@@ -2495,10 +2490,45 @@ remote_path = NodePath("../../BraccioDx/ManoDx")
 libraries = {
 "": SubResource("AnimationLibrary_cdjki")
 }
-speed_scale = 1.867
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_4xbb0")
+tree_root = ExtResource("47_ypqem")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Idle/blend_position = Vector2(0, 0)
-parameters/Walk/blend_position = Vector2(0, 0)
+parameters/blend_position = Vector2(-0.010645, -0.172047)
+
+[node name="Testa" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(-5.47255, -102.898)
+texture = ExtResource("2_kf6f8")
+offset = Vector2(10.8645, -12.0937)
+
+[node name="BoccaChiusa" type="Sprite2D" parent="Testa"]
+position = Vector2(0.463882, -16.0969)
+rotation = -0.0324791
+texture = ExtResource("3_kcmg3")
+
+[node name="OcchiAperti" type="Sprite2D" parent="Testa"]
+position = Vector2(-2.44421, -87.6005)
+rotation = -0.028469
+scale = Vector2(1, 1.02633)
+skew = -0.000203133
+texture = ExtResource("4_ar04g")
+
+[node name="OcchioChiusi" type="Sprite2D" parent="Testa"]
+visible = false
+position = Vector2(-1.16152, -89.9981)
+rotation = -0.024016
+texture = ExtResource("5_tp4dl")
+
+[node name="SopraciglioDx" type="Sprite2D" parent="Testa"]
+position = Vector2(-46.9614, -116.664)
+scale = Vector2(1.00002, 1.01693)
+skew = -0.00110698
+texture = ExtResource("6_vjvv4")
+
+[node name="SopraciglioSx" type="Sprite2D" parent="Testa"]
+position = Vector2(50.0622, -114.27)
+scale = Vector2(1.00002, 1.01693)
+skew = -0.00110698
+texture = ExtResource("7_gxpft")
