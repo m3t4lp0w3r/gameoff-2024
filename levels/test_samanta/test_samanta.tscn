@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://1dtl451uouxy"]
+[gd_scene load_steps=20 format=3 uid="uid://1dtl451uouxy"]
 
 [ext_resource type="PackedScene" uid="uid://x1in8gvchlxv" path="res://link_system/link_system.tscn" id="1_73o8s"]
 [ext_resource type="Texture2D" uid="uid://ckjcq1uog4sk5" path="res://icon.svg" id="1_ki2qy"]
@@ -27,8 +27,6 @@ size = Vector2(94, 101)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h8hj2"]
 size = Vector2(89, 85)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrfr3"]
 
 [node name="TestSamanta" type="Node2D"]
 
@@ -171,9 +169,6 @@ position = Vector2(451, 363)
 position = Vector2(877, 11)
 level_id = "Test Simon"
 link_id = "SouthEntrance"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
-shape = SubResource("RectangleShape2D_rrfr3")
 
 [connection signal="interacted" from="Item/ItemCollision/Interactable" to="Item" method="_on_interactable_interacted"]
 [connection signal="player_enter" from="Item/ItemCollision/Interactable" to="Item" method="_on_interactable_player_enter"]

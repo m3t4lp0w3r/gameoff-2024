@@ -1,3 +1,37 @@
-[gd_scene format=3 uid="uid://i5m1yfut0lb0"]
+[gd_scene load_steps=5 format=3 uid="uid://i5m1yfut0lb0"]
+
+[ext_resource type="PackedScene" uid="uid://x1in8gvchlxv" path="res://link_system/link_system.tscn" id="1_7aig2"]
+[ext_resource type="PackedScene" uid="uid://cebw0e58m5xj5" path="res://camera/camera.tscn" id="2_w3ih5"]
+[ext_resource type="PackedScene" uid="uid://b1124l3cpps2k" path="res://player/player.tscn" id="3_x3oc3"]
+[ext_resource type="PackedScene" uid="uid://0hi4ih83soya" path="res://link_system/portal.tscn" id="4_54ipo"]
 
 [node name="SalaPreistorica" type="Node2D"]
+
+[node name="LinkSystem" parent="." instance=ExtResource("1_7aig2")]
+
+[node name="South" type="Node2D" parent="LinkSystem"]
+position = Vector2(1683, 963)
+
+[node name="ColorRect" type="ColorRect" parent="LinkSystem/South"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CameraFollow" parent="." instance=ExtResource("2_w3ih5")]
+position = Vector2(960, 539)
+
+[node name="Player" parent="." instance=ExtResource("3_x3oc3")]
+unique_name_in_owner = true
+position = Vector2(973, 542)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 432.0
+offset_top = 273.0
+offset_right = 703.0
+offset_bottom = 356.0
+theme_override_font_sizes/font_size = 60
+text = "Sala Preistorica/Naturale"
+
+[node name="Corridoio" parent="." instance=ExtResource("4_54ipo")]
+position = Vector2(1700, 1146)
+level_id = "corridoio"
+link_id = "North1"

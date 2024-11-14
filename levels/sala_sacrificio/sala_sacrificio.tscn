@@ -1,3 +1,40 @@
-[gd_scene format=3 uid="uid://fxf8fytflat8"]
+[gd_scene load_steps=6 format=3 uid="uid://fxf8fytflat8"]
+
+[ext_resource type="PackedScene" uid="uid://x1in8gvchlxv" path="res://link_system/link_system.tscn" id="1_68cts"]
+[ext_resource type="Script" path="res://levels/sala_sacrificio/scripts/sala_sacrificio.gd" id="1_445d4"]
+[ext_resource type="PackedScene" uid="uid://cebw0e58m5xj5" path="res://camera/camera.tscn" id="1_i4dcl"]
+[ext_resource type="PackedScene" uid="uid://b1124l3cpps2k" path="res://player/player.tscn" id="2_ylly3"]
+[ext_resource type="PackedScene" uid="uid://0hi4ih83soya" path="res://link_system/portal.tscn" id="4_vhabn"]
 
 [node name="SalaSacrificio" type="Node2D"]
+script = ExtResource("1_445d4")
+
+[node name="LinkSystem" parent="." instance=ExtResource("1_68cts")]
+
+[node name="East" type="Node2D" parent="LinkSystem"]
+position = Vector2(1744, 542)
+
+[node name="ColorRect" type="ColorRect" parent="LinkSystem/East"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CameraFollow" parent="." instance=ExtResource("1_i4dcl")]
+position = Vector2(956, 546)
+
+[node name="Player" parent="." instance=ExtResource("2_ylly3")]
+unique_name_in_owner = true
+position = Vector2(973, 557)
+
+[node name="Corridoio" parent="." instance=ExtResource("4_vhabn")]
+position = Vector2(1921, 568)
+level_id = "corridoio"
+link_id = "WestDoor"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 432.0
+offset_top = 273.0
+offset_right = 703.0
+offset_bottom = 356.0
+theme_override_font_sizes/font_size = 60
+text = "Sala sacrificio 
+Press E for end cutscene"

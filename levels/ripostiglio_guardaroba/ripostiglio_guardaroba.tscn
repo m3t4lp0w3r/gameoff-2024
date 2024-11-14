@@ -1,11 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpvijh4osyp35"]
+[gd_scene load_steps=5 format=3 uid="uid://dpvijh4osyp35"]
 
 [ext_resource type="PackedScene" uid="uid://cebw0e58m5xj5" path="res://camera/camera.tscn" id="1_8adjt"]
 [ext_resource type="PackedScene" uid="uid://x1in8gvchlxv" path="res://link_system/link_system.tscn" id="1_gk3i8"]
 [ext_resource type="PackedScene" uid="uid://b1124l3cpps2k" path="res://player/player.tscn" id="2_qdndy"]
 [ext_resource type="PackedScene" uid="uid://0hi4ih83soya" path="res://link_system/portal.tscn" id="4_lo1lt"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_khwp6"]
 
 [node name="RipostiglioGuardaroba" type="Node2D"]
 
@@ -39,6 +37,3 @@ text = "Ripostiglio / Guardaroba
 position = Vector2(936, 1026)
 level_id = "ingresso"
 link_id = "NorthDoor"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
-shape = SubResource("RectangleShape2D_khwp6")

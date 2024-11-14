@@ -1,17 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxa6tkkfq7b3q"]
+[gd_scene load_steps=5 format=3 uid="uid://dxa6tkkfq7b3q"]
 
 [ext_resource type="PackedScene" uid="uid://cebw0e58m5xj5" path="res://camera/camera.tscn" id="1_qbi31"]
 [ext_resource type="PackedScene" uid="uid://b1124l3cpps2k" path="res://player/player.tscn" id="2_amsm6"]
 [ext_resource type="PackedScene" uid="uid://x1in8gvchlxv" path="res://link_system/link_system.tscn" id="3_1w6um"]
 [ext_resource type="PackedScene" uid="uid://0hi4ih83soya" path="res://link_system/portal.tscn" id="4_4x6bi"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1tqd"]
-
 [node name="Ingresso" type="Node2D"]
 
 [node name="LinkSystem" parent="." instance=ExtResource("3_1w6um")]
 
 [node name="NorthDoor" type="Node2D" parent="LinkSystem"]
+visible = false
 position = Vector2(954, 84)
 
 [node name="ColorRect" type="ColorRect" parent="LinkSystem/NorthDoor"]
@@ -46,32 +45,15 @@ player_ref = NodePath("../Player")
 unique_name_in_owner = true
 position = Vector2(991, 549)
 
-[node name="Guardaroba" parent="." instance=ExtResource("4_4x6bi")]
-position = Vector2(974, 3)
-level_id = "guardaroba ripostiglio"
-link_id = "SouthDoor"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Guardaroba"]
-shape = SubResource("RectangleShape2D_k1tqd")
-metadata/_edit_lock_ = true
-
 [node name="Guardiola" parent="." instance=ExtResource("4_4x6bi")]
 position = Vector2(985, 1030)
 level_id = "guardiola"
 link_id = "NorthDoor"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Guardiola"]
-shape = SubResource("RectangleShape2D_k1tqd")
-metadata/_edit_lock_ = true
-
 [node name="Corridoio" parent="." instance=ExtResource("4_4x6bi")]
 position = Vector2(21, 501)
 level_id = "corridoio"
-link_id = "SouthDoor"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Corridoio"]
-shape = SubResource("RectangleShape2D_k1tqd")
-metadata/_edit_lock_ = true
+link_id = "EastDoor"
 
 [node name="Label" type="Label" parent="."]
 offset_left = 441.0
