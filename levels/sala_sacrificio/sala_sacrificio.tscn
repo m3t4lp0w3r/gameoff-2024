@@ -2,31 +2,47 @@
 
 [ext_resource type="PackedScene" uid="uid://x1in8gvchlxv" path="res://link_system/link_system.tscn" id="1_68cts"]
 [ext_resource type="Script" path="res://levels/sala_sacrificio/scripts/sala_sacrificio.gd" id="1_445d4"]
-[ext_resource type="PackedScene" uid="uid://cebw0e58m5xj5" path="res://camera/camera.tscn" id="1_i4dcl"]
+[ext_resource type="Texture2D" uid="uid://cujmfwn60i8h1" path="res://resource/assets/placeholder/stanze.png" id="2_slivy"]
 [ext_resource type="PackedScene" uid="uid://b1124l3cpps2k" path="res://player/player.tscn" id="2_ylly3"]
 [ext_resource type="PackedScene" uid="uid://0hi4ih83soya" path="res://link_system/portal.tscn" id="4_vhabn"]
 
 [node name="SalaSacrificio" type="Node2D"]
 script = ExtResource("1_445d4")
 
+[node name="Stanze" type="Sprite2D" parent="."]
+position = Vector2(947, 529)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("2_slivy")
+region_enabled = true
+region_rect = Rect2(226.559, 1446.06, 1871.47, 1400.55)
+
+[node name="ColorRect" type="ColorRect" parent="Stanze"]
+z_index = -1
+anchors_preset = -1
+anchor_right = 0.00810682
+anchor_bottom = 0.0706215
+offset_left = -1517.0
+offset_top = -831.0
+offset_right = 1525.0
+offset_bottom = 859.0
+metadata/_edit_use_anchors_ = true
+
 [node name="LinkSystem" parent="." instance=ExtResource("1_68cts")]
 
 [node name="East" type="Node2D" parent="LinkSystem"]
-position = Vector2(1744, 542)
+position = Vector2(1265, 579)
 
 [node name="ColorRect" type="ColorRect" parent="LinkSystem/East"]
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="CameraFollow" parent="." instance=ExtResource("1_i4dcl")]
-position = Vector2(956, 546)
+color = Color(0.580646, 1, 0.440148, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_ylly3")]
 unique_name_in_owner = true
 position = Vector2(973, 557)
 
 [node name="Corridoio" parent="." instance=ExtResource("4_vhabn")]
-position = Vector2(1921, 568)
+position = Vector2(1400, 568)
 level_id = "corridoio"
 link_id = "WestDoor"
 

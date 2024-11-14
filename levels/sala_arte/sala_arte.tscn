@@ -1,30 +1,48 @@
 [gd_scene load_steps=5 format=3 uid="uid://ce2sb814fdfw0"]
 
+[ext_resource type="Texture2D" uid="uid://cujmfwn60i8h1" path="res://resource/assets/placeholder/stanze.png" id="1_bst2j"]
 [ext_resource type="PackedScene" uid="uid://x1in8gvchlxv" path="res://link_system/link_system.tscn" id="1_i1wci"]
-[ext_resource type="PackedScene" uid="uid://cebw0e58m5xj5" path="res://camera/camera.tscn" id="1_ia8ci"]
 [ext_resource type="PackedScene" uid="uid://b1124l3cpps2k" path="res://player/player.tscn" id="2_cc2si"]
 [ext_resource type="PackedScene" uid="uid://0hi4ih83soya" path="res://link_system/portal.tscn" id="4_cd7wf"]
 
 [node name="SalaArte" type="Node2D"]
 
+[node name="Stanze" type="Sprite2D" parent="."]
+position = Vector2(947, 529)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("1_bst2j")
+region_enabled = true
+region_rect = Rect2(3338.71, 209.254, 2097.76, 1062.95)
+
+[node name="ColorRect" type="ColorRect" parent="Stanze"]
+z_index = -1
+anchors_preset = -1
+anchor_right = 0.00810682
+anchor_bottom = 0.0706215
+offset_left = -1517.0
+offset_top = -831.0
+offset_right = 1525.0
+offset_bottom = 859.0
+metadata/_edit_use_anchors_ = true
+
 [node name="LinkSystem" parent="." instance=ExtResource("1_i1wci")]
 
 [node name="South" type="Node2D" parent="LinkSystem"]
-position = Vector2(282, 930)
+position = Vector2(684, 743)
 
 [node name="ColorRect" type="ColorRect" parent="LinkSystem/South"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="CameraFollow" parent="." instance=ExtResource("1_ia8ci")]
-position = Vector2(951, 556)
+offset_left = -12.0
+offset_top = -19.0
+offset_right = 28.0
+offset_bottom = 21.0
+color = Color(0.586297, 1, 0.416665, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_cc2si")]
 unique_name_in_owner = true
 position = Vector2(944, 549)
 
 [node name="Portal" parent="." instance=ExtResource("4_cd7wf")]
-position = Vector2(299, 1090)
+position = Vector2(667, 865)
 level_id = "corridoio"
 link_id = "North2"
 

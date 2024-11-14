@@ -1,43 +1,72 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqkf3k4ab5ac4"]
+[gd_scene load_steps=6 format=3 uid="uid://bqkf3k4ab5ac4"]
 
 [ext_resource type="PackedScene" uid="uid://x1in8gvchlxv" path="res://link_system/link_system.tscn" id="1_fksk1"]
 [ext_resource type="PackedScene" uid="uid://cebw0e58m5xj5" path="res://camera/camera.tscn" id="1_un85s"]
+[ext_resource type="Texture2D" uid="uid://cujmfwn60i8h1" path="res://resource/assets/placeholder/stanze.png" id="1_y43ya"]
 [ext_resource type="PackedScene" uid="uid://b1124l3cpps2k" path="res://player/player.tscn" id="2_qa672"]
 [ext_resource type="PackedScene" uid="uid://0hi4ih83soya" path="res://link_system/portal.tscn" id="4_mxoqe"]
 
 [node name="Corridoio" type="Node2D"]
 
+[node name="Stanze" type="Sprite2D" parent="."]
+position = Vector2(947, 529)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("1_y43ya")
+region_enabled = true
+region_rect = Rect2(2186.73, 1490.61, 2216.14, 1365.98)
+
+[node name="ColorRect" type="ColorRect" parent="Stanze"]
+z_index = -1
+offset_left = -1517.0
+offset_top = -831.0
+offset_right = 1525.0
+offset_bottom = 859.0
+metadata/_edit_use_anchors_ = true
+
 [node name="LinkSystem" parent="." instance=ExtResource("1_fksk1")]
 
 [node name="EastDoor" type="Node2D" parent="LinkSystem"]
-position = Vector2(1711, 569)
+position = Vector2(1420, 605)
 
 [node name="ColorRect" type="ColorRect" parent="LinkSystem/EastDoor"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -16.0
+offset_top = -20.0
+offset_right = 24.0
+offset_bottom = 20.0
+color = Color(0.352941, 0.952941, 0.439216, 1)
 
 [node name="WestDoor" type="Node2D" parent="LinkSystem"]
-position = Vector2(99, 551)
+position = Vector2(442, 626)
 
 [node name="ColorRect" type="ColorRect" parent="LinkSystem/WestDoor"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -17.0
+offset_top = -18.0
+offset_right = 23.0
+offset_bottom = 22.0
+color = Color(0.567675, 1, 0.487942, 1)
 
 [node name="North1" type="Node2D" parent="LinkSystem"]
-position = Vector2(378, 60)
+position = Vector2(600, 572)
 
 [node name="ColorRect" type="ColorRect" parent="LinkSystem/North1"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -16.0
+offset_top = -17.0
+offset_right = 24.0
+offset_bottom = 23.0
+color = Color(0.533841, 1, 0.586211, 1)
 
 [node name="North2" type="Node2D" parent="LinkSystem"]
-position = Vector2(1510, 78)
+position = Vector2(1263, 565)
 
 [node name="ColorRect" type="ColorRect" parent="LinkSystem/North2"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -18.0
+offset_top = -15.0
+offset_right = 22.0
+offset_bottom = 25.0
+color = Color(0.570505, 1, 0.478134, 1)
 
 [node name="CameraFollow" parent="." instance=ExtResource("1_un85s")]
+visible = false
 position = Vector2(941, 542)
 
 [node name="Player" parent="." instance=ExtResource("2_qa672")]
@@ -53,21 +82,21 @@ theme_override_font_sizes/font_size = 60
 text = "Corridoio"
 
 [node name="Ingresso" parent="." instance=ExtResource("4_mxoqe")]
-position = Vector2(1864, 566)
+position = Vector2(1527, 569)
 level_id = "ingresso"
 link_id = "WestDoor"
 
 [node name="SalaArte" parent="." instance=ExtResource("4_mxoqe")]
-position = Vector2(1510, -36)
+position = Vector2(1258, 469)
 level_id = "sala arte"
 link_id = "South"
 
 [node name="SalaPreistorica" parent="." instance=ExtResource("4_mxoqe")]
-position = Vector2(390, -40)
+position = Vector2(608, 469)
 level_id = "sala preistorica"
 link_id = "South"
 
 [node name="SalaSacrificio" parent="." instance=ExtResource("4_mxoqe")]
-position = Vector2(-18, 572)
+position = Vector2(333, 589)
 level_id = "sala sacrificio"
 link_id = "East"

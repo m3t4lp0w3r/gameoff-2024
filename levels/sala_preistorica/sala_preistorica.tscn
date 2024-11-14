@@ -1,23 +1,41 @@
 [gd_scene load_steps=5 format=3 uid="uid://i5m1yfut0lb0"]
 
 [ext_resource type="PackedScene" uid="uid://x1in8gvchlxv" path="res://link_system/link_system.tscn" id="1_7aig2"]
-[ext_resource type="PackedScene" uid="uid://cebw0e58m5xj5" path="res://camera/camera.tscn" id="2_w3ih5"]
+[ext_resource type="Texture2D" uid="uid://cujmfwn60i8h1" path="res://resource/assets/placeholder/stanze.png" id="1_f8vd0"]
 [ext_resource type="PackedScene" uid="uid://b1124l3cpps2k" path="res://player/player.tscn" id="3_x3oc3"]
 [ext_resource type="PackedScene" uid="uid://0hi4ih83soya" path="res://link_system/portal.tscn" id="4_54ipo"]
 
 [node name="SalaPreistorica" type="Node2D"]
 
+[node name="Stanze" type="Sprite2D" parent="."]
+position = Vector2(947, 529)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("1_f8vd0")
+region_enabled = true
+region_rect = Rect2(1070.55, 209.254, 2201.73, 1242.93)
+
+[node name="ColorRect" type="ColorRect" parent="Stanze"]
+z_index = -1
+anchors_preset = -1
+anchor_right = 0.00810682
+anchor_bottom = 0.0706215
+offset_left = -1517.0
+offset_top = -831.0
+offset_right = 1525.0
+offset_bottom = 859.0
+metadata/_edit_use_anchors_ = true
+
 [node name="LinkSystem" parent="." instance=ExtResource("1_7aig2")]
 
 [node name="South" type="Node2D" parent="LinkSystem"]
-position = Vector2(1683, 963)
+position = Vector2(1246, 687)
 
 [node name="ColorRect" type="ColorRect" parent="LinkSystem/South"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="CameraFollow" parent="." instance=ExtResource("2_w3ih5")]
-position = Vector2(960, 539)
+offset_left = -16.0
+offset_top = -20.0
+offset_right = 24.0
+offset_bottom = 20.0
+color = Color(0.582582, 1, 0.432314, 1)
 
 [node name="Player" parent="." instance=ExtResource("3_x3oc3")]
 unique_name_in_owner = true
@@ -32,6 +50,6 @@ theme_override_font_sizes/font_size = 60
 text = "Sala Preistorica/Naturale"
 
 [node name="Corridoio" parent="." instance=ExtResource("4_54ipo")]
-position = Vector2(1700, 1146)
+position = Vector2(1256, 809)
 level_id = "corridoio"
 link_id = "North1"
