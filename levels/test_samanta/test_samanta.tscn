@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://ek7m3nosnsr8"]
+[gd_scene load_steps=10 format=3 uid="uid://1dtl451uouxy"]
 
 [ext_resource type="Script" path="res://levels/test_samanta/scripts/test_samanta.gd" id="1_m77oh"]
 [ext_resource type="PackedScene" uid="uid://cxjpn016wk5vr" path="res://npc_act_1/npc.tscn" id="4_5pj5m"]
 [ext_resource type="PackedScene" uid="uid://cebw0e58m5xj5" path="res://camera/camera.tscn" id="5_bdooc"]
 [ext_resource type="Script" path="res://dialogue/data/dialog_data.gd" id="5_dxutt"]
-[ext_resource type="Texture2D" uid="uid://xcwf5re384c8" path="res://credits/Credits/Mattia.png" id="5_puhyt"]
+[ext_resource type="Texture2D" uid="uid://xcwf5re384c8" path="res://levels/credits/Credits/Mattia.png" id="5_puhyt"]
 [ext_resource type="Resource" uid="uid://ckdw6l61shpjf" path="res://npc_act_1/data/npc2_player.tres" id="6_be38s"]
 [ext_resource type="PackedScene" uid="uid://b1124l3cpps2k" path="res://player/player.tscn" id="6_hqks2"]
 [ext_resource type="Resource" uid="uid://bfq1ve21ohvwq" path="res://npc_act_1/data/npc2_resp.tres" id="7_iyyhc"]

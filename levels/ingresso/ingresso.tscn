@@ -1,26 +1,21 @@
 [gd_scene load_steps=5 format=3 uid="uid://dxa6tkkfq7b3q"]
 
-[ext_resource type="PackedScene" uid="uid://cebw0e58m5xj5" path="res://camera/camera.tscn" id="1_qbi31"]
+[ext_resource type="Texture2D" uid="uid://ntqtfmjeryjh" path="res://resource/assets/placeholder/IMG_1054.jpg" id="1_0jj6l"]
 [ext_resource type="PackedScene" uid="uid://b1124l3cpps2k" path="res://player/player.tscn" id="2_amsm6"]
 [ext_resource type="PackedScene" uid="uid://x1in8gvchlxv" path="res://link_system/link_system.tscn" id="3_1w6um"]
 [ext_resource type="PackedScene" uid="uid://0hi4ih83soya" path="res://link_system/portal.tscn" id="4_4x6bi"]
 
 [node name="Ingresso" type="Node2D"]
 
+[node name="Stanze" type="Sprite2D" parent="."]
+texture = ExtResource("1_0jj6l")
+offset = Vector2(962, 539)
+region_rect = Rect2(4420.85, 1251.41, 2531.43, 1564.52)
+
 [node name="LinkSystem" parent="." instance=ExtResource("3_1w6um")]
 
-[node name="NorthDoor" type="Node2D" parent="LinkSystem"]
-visible = false
-position = Vector2(954, 84)
-
-[node name="ColorRect" type="ColorRect" parent="LinkSystem/NorthDoor"]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0, 1, 1, 1)
-metadata/_edit_lock_ = true
-
 [node name="SouthDoor" type="Node2D" parent="LinkSystem"]
-position = Vector2(977, 887)
+position = Vector2(1341, 895)
 
 [node name="ColorRect" type="ColorRect" parent="LinkSystem/SouthDoor"]
 offset_right = 40.0
@@ -29,7 +24,7 @@ color = Color(0.769008, 0.954614, 0.43227, 1)
 metadata/_edit_lock_ = true
 
 [node name="WestDoor" type="Node2D" parent="LinkSystem"]
-position = Vector2(128, 494)
+position = Vector2(387, 573)
 
 [node name="ColorRect" type="ColorRect" parent="LinkSystem/WestDoor"]
 offset_right = 40.0
@@ -37,21 +32,17 @@ offset_bottom = 40.0
 color = Color(0.435294, 0.580392, 0.34902, 1)
 metadata/_edit_lock_ = true
 
-[node name="CameraFollow" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("1_qbi31")]
-position = Vector2(962, 543)
-player_ref = NodePath("../Player")
-
 [node name="Player" parent="." instance=ExtResource("2_amsm6")]
 unique_name_in_owner = true
-position = Vector2(991, 549)
+position = Vector2(1587, 611)
 
 [node name="Guardiola" parent="." instance=ExtResource("4_4x6bi")]
-position = Vector2(985, 1030)
+position = Vector2(1367, 1000)
 level_id = "guardiola"
 link_id = "NorthDoor"
 
 [node name="Corridoio" parent="." instance=ExtResource("4_4x6bi")]
-position = Vector2(21, 501)
+position = Vector2(321, 556)
 level_id = "corridoio"
 link_id = "EastDoor"
 
