@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://levels/test_samanta/scripts/test_samanta.gd" id="1_i2h3o"]
 [ext_resource type="PackedScene" uid="uid://cebw0e58m5xj5" path="res://camera/camera.tscn" id="2_lobq4"]
-[ext_resource type="Texture2D" uid="uid://x01qfcfa3ev7" path="res://credits/Credits/Simone.png" id="2_sx5e7"]
+[ext_resource type="Texture2D" uid="uid://x01qfcfa3ev7" path="res://levels/credits/Credits/Simone.png" id="2_sx5e7"]
 [ext_resource type="Script" path="res://dialogue/data/dialog_data.gd" id="2_upk1u"]
 [ext_resource type="PackedScene" uid="uid://bf7a0a6fbohbw" path="res://telephone/telephone.tscn" id="4_wldul"]
-[ext_resource type="Texture2D" uid="uid://xcwf5re384c8" path="res://credits/Credits/Mattia.png" id="8_r1lso"]
+[ext_resource type="Texture2D" uid="uid://xcwf5re384c8" path="res://levels/credits/Credits/Mattia.png" id="8_r1lso"]
 [ext_resource type="PackedScene" uid="uid://b1124l3cpps2k" path="res://player/player.tscn" id="10_31avi"]
-[ext_resource type="Texture2D" uid="uid://dajgyvjefmeg4" path="res://credits/Credits/Kevin.png" id="13_6okvm"]
+[ext_resource type="Texture2D" uid="uid://dajgyvjefmeg4" path="res://levels/credits/Credits/Kevin.png" id="13_6okvm"]
 
 [sub_resource type="Resource" id="Resource_5jy0i"]
 script = ExtResource("2_upk1u")
