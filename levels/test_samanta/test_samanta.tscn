@@ -8,16 +8,6 @@
 [node name="TestSamanta" type="Node2D"]
 script = ExtResource("1_m77oh")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 1382.0
-offset_top = 68.0
-offset_right = 1910.0
-offset_bottom = 169.0
-theme_override_font_sizes/font_size = 50
-text = "EXIT"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="CameraFollow" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("5_bdooc")]
 position = Vector2(918, -29)
 player_ref = NodePath("../Player")
@@ -33,3 +23,13 @@ position = Vector2(-273, -98)
 
 [node name="Statue3" parent="." instance=ExtResource("4_7m2vr")]
 position = Vector2(-584, 181)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -658.0
+offset_top = -463.0
+offset_right = -207.0
+offset_bottom = -258.0
+theme_override_font_sizes/font_size = 60
+text = "STATUES"
+horizontal_alignment = 1
+vertical_alignment = 1
