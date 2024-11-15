@@ -19,10 +19,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CameraFollow" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("5_bdooc")]
+position = Vector2(918, -29)
 player_ref = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("6_hqks2")]
 unique_name_in_owner = true
+position = Vector2(918, -29)
 
 [node name="Statue" parent="." instance=ExtResource("4_7m2vr")]
 position = Vector2(-273, -98)
+
+[node name="Statue2" parent="." instance=ExtResource("4_7m2vr")]
+
+[node name="Statue3" parent="." instance=ExtResource("4_7m2vr")]
+position = Vector2(-584, 181)
