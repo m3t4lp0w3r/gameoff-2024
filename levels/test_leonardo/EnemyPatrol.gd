@@ -1,10 +1,12 @@
-extends Node2D
+extends Area2D
 
 var speed = 20
 var fov_up
 var fov_down
 var fov_left
 var fov_right
+var initial_direction = "right" 
+var is_resetting = false  
 
 func _ready():
 	fov_up = $FieldOfViewUp
@@ -17,9 +19,8 @@ func _ready():
 	fov_left.visible = false
 	fov_right.visible = false
 
-	set_fov("right")
-
-	
+	set_fov(initial_direction)
+	print("Initial FOV set to:", initial_direction)
 
 func set_fov(dir: String):
 	fov_up.visible = false
@@ -27,40 +28,29 @@ func set_fov(dir: String):
 	fov_left.visible = false
 	fov_right.visible = false
 
-	# Show the selected field of view based on the direction
-	if dir == "up":
-		fov_up.visible = true
-		fov_up.set_direction("up")
-	elif dir == "down":
-		fov_down.visible = true
-		fov_down.set_direction("down")
-	elif dir == "left":
-		fov_left.visible = true
-		fov_left.set_direction("left")
-	elif dir == "right":
-		fov_right.visible = true
-		fov_right.set_direction("right")
+	match dir:
+		"up":
+			fov_up.visible = true
+		"down":
+			fov_down.visible = true
+		"left":
+			fov_left.visible = true
+		"right":
+			fov_right.visible = true
 
+	print("FOV updated to:", dir)  
 
-# Checkpoint signals to activate different FOVs and movement
-func _on_checkpoint_left_body_entered(body):
-	if body == self:
-		set_fov("left")
+func _on_path_reset():
+	print("Path reset detected in EnemyPatrol")  
+	is_resetting = true  
+	set_fov(initial_direction)  
+	await get_tree().create_timer(0.1).timeout  
+	is_resetting = false 
 
-func _on_checkpoint_right_body_entered(body):
-	if body == self:
-		set_fov("right")
+func _on_EnemyPatrol_area_entered(area: Area2D):
+	if is_resetting:
+		return
 
-func _on_checkpoint_up_body_entered(body):
-	if body == self:
-		set_fov("up")
-
-func _on_checkpoint_down_body_entered(body):
-	if body == self:
-		set_fov("down")
-
-func _on_checkpoint_stop_body_entered(body):
-	if body == self:
-		speed = 0  # Stop movement temporarily (optional)
-		await get_tree().create_timer(2.0).timeout
-		speed = 20  # Resume movement (optional)
+	if area.is_in_group("Checkpoints"):
+		print("Checkpoint encountered with direction:", area.direction)
+		set_fov(area.direction)
