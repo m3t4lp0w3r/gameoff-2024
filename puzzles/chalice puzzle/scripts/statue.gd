@@ -1,5 +1,9 @@
 extends Node2D
 @onready var text_prompt = $Label
+@onready var sprite_front = $"StaticBody2D/statue front"
+@onready var sprite_back = $"StaticBody2D/statue back"
+@onready var sprite_left = $"StaticBody2D/statue left"
+@onready var sprite_right = $"StaticBody2D/statue right"
 @export var direction_statue : String
 
 var position_statue = ["Front", "Back", "Left", "Right"]
@@ -24,9 +28,30 @@ func _on_interactable_player_exit() -> void:
 
 
 func _on_interactable_interacted() -> void:
-	if counter_position < position_statue.size() - 1:
-		counter_position += 1
-		position_statue[counter_position]
-	else:
+	counter_position += 1
+	if counter_position >= position_statue.size():
 		counter_position = 0
 	print(position_statue[counter_position])
+	match position_statue[counter_position]: 
+		"Front":
+			sprite_front.show()
+			sprite_back.hide()
+			sprite_left.hide()
+			sprite_right.hide()
+		"Back":
+			sprite_front.hide()
+			sprite_back.show()
+			sprite_left.hide()
+			sprite_right.hide()
+		"Left":
+			sprite_front.hide()
+			sprite_back.hide()
+			sprite_left.show()
+			sprite_right.hide()
+		"Right":
+			sprite_front.hide()
+			sprite_back.hide()
+			sprite_left.hide()
+			sprite_right.show()
+		_:
+			printerr("Unexpected position value:", position_statue[counter_position])

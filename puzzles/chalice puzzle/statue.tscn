@@ -22,12 +22,35 @@ offset_bottom = -90.0
 text = "Interact"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
-[node name="statue" type="Sprite2D" parent="StaticBody2D"]
+[node name="statue front" type="Sprite2D" parent="StaticBody2D"]
 scale = Vector2(5, 5)
 texture = ExtResource("1_8o6jp")
 region_enabled = true
 region_rect = Rect2(131.046, 130.363, 29.39, 30.7895)
+
+[node name="statue back" type="Sprite2D" parent="StaticBody2D"]
+visible = false
+scale = Vector2(5, 5)
+texture = ExtResource("1_8o6jp")
+region_enabled = true
+region_rect = Rect2(101, -5, 27, 35)
+
+[node name="statue left" type="Sprite2D" parent="StaticBody2D"]
+visible = false
+scale = Vector2(5, 5)
+texture = ExtResource("1_8o6jp")
+region_enabled = true
+region_rect = Rect2(26, 193, 25, 31)
+
+[node name="statue right" type="Sprite2D" parent="StaticBody2D"]
+visible = false
+scale = Vector2(5, 5)
+texture = ExtResource("1_8o6jp")
+region_enabled = true
+region_rect = Rect2(170, 65, 29, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_lifky")
